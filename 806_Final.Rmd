@@ -1,0 +1,43 @@
+---
+title: "806_Final"
+author: "Erin Reilly, Patrick Lemis"
+date: "2023-11-09"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+## Methods
+
+## Results 
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+## Discussion
+
+##Bibliography
