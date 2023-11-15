@@ -1,0 +1,325 @@
+Site,TreeNo,Treatment,Innoculation,Harvest.Time,meanEi,meanLi
+Evelyn & Albert Morse Sr. Preserve,1,MJ,C,E,43.384,31.237
+Evelyn & Albert Morse Sr. Preserve,1,MJ,D,E,41.923,47.232
+Evelyn & Albert Morse Sr. Preserve,1,MJ,M,E,52.282,37.996
+Evelyn & Albert Morse Sr. Preserve,2,MJ,C,E,40.366,39.998
+Evelyn & Albert Morse Sr. Preserve,2,MJ,D,E,39.327,47.481
+Evelyn & Albert Morse Sr. Preserve,2,MJ,M,E,52.632,49.029
+Evelyn & Albert Morse Sr. Preserve,3,BTH,C,L,49.015,33.347
+Evelyn & Albert Morse Sr. Preserve,3,BTH,D,L,53.523,43.987
+Evelyn & Albert Morse Sr. Preserve,3,BTH,M,L,60.565,43.656
+Evelyn & Albert Morse Sr. Preserve,4,C,C,E,34.975,50.703
+Evelyn & Albert Morse Sr. Preserve,4,C,D,E,39.763,38.808
+Evelyn & Albert Morse Sr. Preserve,4,C,M,E,40.798,46.109
+Evelyn & Albert Morse Sr. Preserve,5,C,C,E,52.443,42.755
+Evelyn & Albert Morse Sr. Preserve,5,C,D,E,50.938,56.869
+Evelyn & Albert Morse Sr. Preserve,5,C,M,E,56.788,58.699
+Evelyn & Albert Morse Sr. Preserve,6,MJ+BTH,C,E,42.347,34.118
+Evelyn & Albert Morse Sr. Preserve,6,MJ+BTH,D,E,54.519,57.265
+Evelyn & Albert Morse Sr. Preserve,6,MJ+BTH,M,E,54.689,51.587
+Evelyn & Albert Morse Sr. Preserve,7,MJ+BTH,C,E,50.708,41.852
+Evelyn & Albert Morse Sr. Preserve,7,MJ+BTH,D,E,51.036,56.793
+Evelyn & Albert Morse Sr. Preserve,7,MJ+BTH,M,E,51.818,45.407
+Evelyn & Albert Morse Sr. Preserve,8,C,C,L,NA,44.730
+Evelyn & Albert Morse Sr. Preserve,8,C,D,L,NA,48.924
+Evelyn & Albert Morse Sr. Preserve,8,C,M,L,NA,49.079
+Evelyn & Albert Morse Sr. Preserve,9,MJ+BTH,C,L,NA,42.135
+Evelyn & Albert Morse Sr. Preserve,9,MJ+BTH,D,L,NA,73.183
+Evelyn & Albert Morse Sr. Preserve,9,MJ+BTH,M,L,NA,55.408
+Evelyn & Albert Morse Sr. Preserve,10,MJ,C,L,NA,44.793
+Evelyn & Albert Morse Sr. Preserve,10,MJ,D,L,NA,53.270
+Evelyn & Albert Morse Sr. Preserve,10,MJ,M,L,NA,66.603
+Evelyn & Albert Morse Sr. Preserve,11,MJ+BTH,C,L,52.835,45.450
+Evelyn & Albert Morse Sr. Preserve,11,MJ+BTH,D,L,60.321,61.096
+Evelyn & Albert Morse Sr. Preserve,11,MJ+BTH,M,L,56.039,60.116
+Evelyn & Albert Morse Sr. Preserve,12,MJ,C,L,40.857,39.811
+Evelyn & Albert Morse Sr. Preserve,12,MJ,D,L,75.802,58.978
+Evelyn & Albert Morse Sr. Preserve,12,MJ,M,L,56.088,53.734
+Evelyn & Albert Morse Sr. Preserve,13,MJ,C,L,47.150,36.147
+Evelyn & Albert Morse Sr. Preserve,13,MJ,D,L,67.777,43.395
+Evelyn & Albert Morse Sr. Preserve,13,MJ,M,L,65.775,62.992
+Evelyn & Albert Morse Sr. Preserve,14,MJ+BTH,C,L,NA,35.957
+Evelyn & Albert Morse Sr. Preserve,14,MJ+BTH,D,L,NA,63.229
+Evelyn & Albert Morse Sr. Preserve,14,MJ+BTH,M,L,NA,49.354
+Evelyn & Albert Morse Sr. Preserve,15,C,C,L,NA,46.610
+Evelyn & Albert Morse Sr. Preserve,15,C,D,L,NA,54.962
+Evelyn & Albert Morse Sr. Preserve,15,C,M,L,NA,54.475
+Evelyn & Albert Morse Sr. Preserve,16,BTH,C,L,71.639,52.701
+Evelyn & Albert Morse Sr. Preserve,16,BTH,D,L,95.330,62.252
+Evelyn & Albert Morse Sr. Preserve,16,BTH,M,L,55.560,68.596
+Evelyn & Albert Morse Sr. Preserve,17,BTH,C,L,NA,40.670
+Evelyn & Albert Morse Sr. Preserve,17,BTH,D,L,NA,59.665
+Evelyn & Albert Morse Sr. Preserve,17,BTH,M,L,NA,84.077
+Evelyn & Albert Morse Sr. Preserve,18,MJ,C,L,47.847,44.830
+Evelyn & Albert Morse Sr. Preserve,18,MJ,D,L,42.811,50.089
+Evelyn & Albert Morse Sr. Preserve,18,MJ,M,L,43.586,58.170
+Evelyn & Albert Morse Sr. Preserve,19,C,C,L,54.113,41.352
+Evelyn & Albert Morse Sr. Preserve,19,C,D,L,60.598,52.843
+Evelyn & Albert Morse Sr. Preserve,19,C,M,L,73.531,39.457
+Evelyn & Albert Morse Sr. Preserve,20,BTH,C,E,46.080,38.694
+Evelyn & Albert Morse Sr. Preserve,20,BTH,D,E,49.397,47.583
+Evelyn & Albert Morse Sr. Preserve,20,BTH,M,E,46.929,45.763
+Evelyn & Albert Morse Sr. Preserve,21,MJ+BTH,C,L,NA,41.337
+Evelyn & Albert Morse Sr. Preserve,21,MJ+BTH,D,L,NA,53.731
+Evelyn & Albert Morse Sr. Preserve,21,MJ+BTH,M,L,NA,57.999
+Evelyn & Albert Morse Sr. Preserve,22,C,C,L,NA,40.031
+Evelyn & Albert Morse Sr. Preserve,22,C,D,L,NA,55.323
+Evelyn & Albert Morse Sr. Preserve,22,C,M,L,NA,66.652
+Evelyn & Albert Morse Sr. Preserve,23,MJ+BTH,C,L,60.509,43.429
+Evelyn & Albert Morse Sr. Preserve,23,MJ+BTH,D,L,61.834,57.696
+Evelyn & Albert Morse Sr. Preserve,23,MJ+BTH,M,L,73.813,59.644
+Evelyn & Albert Morse Sr. Preserve,24,MJ,C,E,43.154,35.563
+Evelyn & Albert Morse Sr. Preserve,24,MJ,D,E,49.823,62.034
+Evelyn & Albert Morse Sr. Preserve,24,MJ,M,E,55.043,54.752
+Evelyn & Albert Morse Sr. Preserve,25,MJ+BTH,C,L,48.438,38.452
+Evelyn & Albert Morse Sr. Preserve,25,MJ+BTH,D,L,63.515,63.628
+Evelyn & Albert Morse Sr. Preserve,25,MJ+BTH,M,L,61.084,68.994
+Evelyn & Albert Morse Sr. Preserve,26,MJ,C,L,NA,42.029
+Evelyn & Albert Morse Sr. Preserve,26,MJ,D,L,NA,55.137
+Evelyn & Albert Morse Sr. Preserve,26,MJ,M,L,NA,45.467
+Evelyn & Albert Morse Sr. Preserve,27,BTH,C,E,48.126,37.677
+Evelyn & Albert Morse Sr. Preserve,27,BTH,D,E,55.177,65.299
+Evelyn & Albert Morse Sr. Preserve,27,BTH,M,E,63.032,52.682
+Evelyn & Albert Morse Sr. Preserve,28,BTH,C,L,NA,39.931
+Evelyn & Albert Morse Sr. Preserve,28,BTH,D,L,NA,56.077
+Evelyn & Albert Morse Sr. Preserve,28,BTH,M,L,NA,52.552
+Evelyn & Albert Morse Sr. Preserve,29,MJ+BTH,C,E,55.394,44.487
+Evelyn & Albert Morse Sr. Preserve,29,MJ+BTH,D,E,65.384,58.040
+Evelyn & Albert Morse Sr. Preserve,29,MJ+BTH,M,E,62.825,55.524
+Evelyn & Albert Morse Sr. Preserve,30,C,C,L,63.053,44.388
+Evelyn & Albert Morse Sr. Preserve,30,C,D,L,77.253,58.475
+Evelyn & Albert Morse Sr. Preserve,30,C,M,L,72.089,73.834
+Evelyn & Albert Morse Sr. Preserve,31,C,C,L,59.622,48.486
+Evelyn & Albert Morse Sr. Preserve,31,C,D,L,76.510,86.861
+Evelyn & Albert Morse Sr. Preserve,31,C,M,L,74.218,63.220
+Evelyn & Albert Morse Sr. Preserve,32,BTH,C,L,83.680,43.870
+Evelyn & Albert Morse Sr. Preserve,32,BTH,D,L,104.229,55.361
+Evelyn & Albert Morse Sr. Preserve,32,BTH,M,L,81.463,51.998
+Evelyn & Albert Morse Sr. Preserve,33,BTH,C,L,NA,42.951
+Evelyn & Albert Morse Sr. Preserve,33,BTH,D,L,NA,60.727
+Evelyn & Albert Morse Sr. Preserve,33,BTH,M,L,NA,63.817
+Evelyn & Albert Morse Sr. Preserve,34,MJ,C,L,52.652,42.707
+Evelyn & Albert Morse Sr. Preserve,34,MJ,D,L,60.566,64.504
+Evelyn & Albert Morse Sr. Preserve,34,MJ,M,L,62.556,57.777
+Evelyn & Albert Morse Sr. Preserve,35,C,C,E,50.374,39.960
+Evelyn & Albert Morse Sr. Preserve,35,C,D,E,60.232,67.288
+Evelyn & Albert Morse Sr. Preserve,35,C,M,E,51.737,50.602
+Evelyn & Albert Morse Sr. Preserve,36,BTH,C,E,47.699,38.479
+Evelyn & Albert Morse Sr. Preserve,36,BTH,D,E,56.143,52.973
+Evelyn & Albert Morse Sr. Preserve,36,BTH,M,E,56.403,49.336
+Kingman Farm,1,MJ+BTH,C,E,56.707,46.317
+Kingman Farm,1,MJ+BTH,D,E,43.325,56.507
+Kingman Farm,1,MJ+BTH,M,E,56.892,43.963
+Kingman Farm,2,MJ,C,L,47.291,39.193
+Kingman Farm,2,MJ,D,L,58.004,45.377
+Kingman Farm,2,MJ,M,L,102.931,53.569
+Kingman Farm,3,MJ,C,E,52.658,40.378
+Kingman Farm,3,MJ,D,E,57.593,131.988
+Kingman Farm,3,MJ,M,E,79.870,49.214
+Kingman Farm,4,MJ+BTH,C,E,41.507,40.840
+Kingman Farm,4,MJ+BTH,D,E,39.155,62.903
+Kingman Farm,4,MJ+BTH,M,E,54.177,46.037
+Kingman Farm,5,C,C,E,54.888,77.597
+Kingman Farm,5,C,D,E,49.792,59.202
+Kingman Farm,5,C,M,E,91.703,53.301
+Kingman Farm,6,MJ+BTH,C,L,43.366,40.862
+Kingman Farm,6,MJ+BTH,D,L,65.810,64.265
+Kingman Farm,6,MJ+BTH,M,L,95.687,59.931
+Kingman Farm,7,MJ+BTH,C,E,41.216,44.382
+Kingman Farm,7,MJ+BTH,D,E,46.476,55.256
+Kingman Farm,7,MJ+BTH,M,E,59.561,53.230
+Kingman Farm,8,MJ,C,E,60.054,61.754
+Kingman Farm,8,MJ,D,E,57.748,112.132
+Kingman Farm,8,MJ,M,E,66.200,67.210
+Kingman Farm,9,BTH,C,E,57.768,40.224
+Kingman Farm,9,BTH,D,E,71.571,134.749
+Kingman Farm,9,BTH,M,E,106.290,81.931
+Kingman Farm,10,MJ+BTH,C,E,46.285,47.621
+Kingman Farm,10,MJ+BTH,D,E,82.918,65.027
+Kingman Farm,10,MJ+BTH,M,E,168.213,76.592
+Kingman Farm,11,MJ+BTH,C,L,47.849,34.781
+Kingman Farm,11,MJ+BTH,D,L,62.729,87.475
+Kingman Farm,11,MJ+BTH,M,L,57.864,65.090
+Kingman Farm,12,MJ,C,E,39.019,38.729
+Kingman Farm,12,MJ,D,E,51.872,79.724
+Kingman Farm,12,MJ,M,E,64.440,58.029
+Kingman Farm,13,BTH,C,E,56.049,44.578
+Kingman Farm,13,BTH,D,E,61.261,57.348
+Kingman Farm,13,BTH,M,E,69.674,60.635
+Kingman Farm,14,C,C,L,47.989,38.216
+Kingman Farm,14,C,D,L,61.026,58.074
+Kingman Farm,14,C,M,L,97.623,56.304
+Kingman Farm,15,MJ,C,L,46.913,38.172
+Kingman Farm,15,MJ,D,L,56.080,49.456
+Kingman Farm,15,MJ,M,L,81.049,66.303
+Kingman Farm,16,MJ+BTH,C,L,44.953,40.203
+Kingman Farm,16,MJ+BTH,D,L,58.379,57.375
+Kingman Farm,16,MJ+BTH,M,L,85.002,54.563
+Kingman Farm,17,C,C,L,41.816,39.822
+Kingman Farm,17,C,D,L,59.216,57.729
+Kingman Farm,17,C,M,L,89.803,60.762
+Kingman Farm,18,C,C,L,60.333,39.146
+Kingman Farm,18,C,D,L,63.978,58.394
+Kingman Farm,18,C,M,L,64.637,56.405
+Kingman Farm,19,MJ,C,E,49.118,45.061
+Kingman Farm,19,MJ,D,E,53.270,76.236
+Kingman Farm,19,MJ,M,E,61.835,58.319
+Kingman Farm,20,C,C,L,54.657,38.087
+Kingman Farm,20,C,D,L,52.439,50.351
+Kingman Farm,20,C,M,L,86.641,44.956
+Kingman Farm,21,MJ,C,E,49.208,37.207
+Kingman Farm,21,MJ,D,E,70.926,75.375
+Kingman Farm,21,MJ,M,E,96.870,64.227
+Kingman Farm,22,MJ+BTH,C,L,59.126,43.503
+Kingman Farm,22,MJ+BTH,D,L,80.776,79.023
+Kingman Farm,22,MJ+BTH,M,L,169.227,74.319
+Kingman Farm,23,BTH,C,E,46.522,41.897
+Kingman Farm,23,BTH,D,E,51.677,54.827
+Kingman Farm,23,BTH,M,E,46.614,52.221
+Kingman Farm,24,MJ,C,L,49.155,46.933
+Kingman Farm,24,MJ,D,L,74.586,63.316
+Kingman Farm,24,MJ,M,L,90.422,64.158
+Kingman Farm,25,MJ+BTH,C,E,49.549,52.184
+Kingman Farm,25,MJ+BTH,D,E,52.760,70.319
+Kingman Farm,25,MJ+BTH,M,E,72.372,73.619
+Kingman Farm,26,C,C,L,59.029,54.220
+Kingman Farm,26,C,D,L,72.903,86.090
+Kingman Farm,26,C,M,L,96.629,67.040
+Kingman Farm,27,BTH,C,L,54.096,44.532
+Kingman Farm,27,BTH,D,L,61.805,75.117
+Kingman Farm,27,BTH,M,L,57.655,57.522
+Kingman Farm,28,C,C,E,51.595,48.923
+Kingman Farm,28,C,D,E,67.572,78.656
+Kingman Farm,28,C,M,E,76.286,57.059
+Kingman Farm,29,MJ,C,L,45.239,43.500
+Kingman Farm,29,MJ,D,L,115.294,66.879
+Kingman Farm,29,MJ,M,L,94.317,82.772
+Kingman Farm,30,BTH,C,E,42.292,40.507
+Kingman Farm,30,BTH,D,E,60.315,82.463
+Kingman Farm,30,BTH,M,E,73.750,57.219
+Kingman Farm,31,BTH,C,E,50.929,41.176
+Kingman Farm,31,BTH,D,E,61.553,70.687
+Kingman Farm,31,BTH,M,E,62.769,60.730
+Kingman Farm,32,C,C,L,59.715,42.183
+Kingman Farm,32,C,D,L,70.075,55.582
+Kingman Farm,32,C,M,L,77.690,55.583
+Kingman Farm,33,BTH,C,L,53.475,47.206
+Kingman Farm,33,BTH,D,L,87.892,58.060
+Kingman Farm,33,BTH,M,L,90.322,53.590
+Kingman Farm,34,BTH,C,E,50.118,61.777
+Kingman Farm,34,BTH,D,E,280.345,113.741
+Kingman Farm,34,BTH,M,E,134.848,62.337
+Kingman Farm,35,BTH,C,L,NA,NA
+Kingman Farm,35,BTH,D,L,NA,NA
+Kingman Farm,35,BTH,M,L,NA,NA
+Kingman Farm,36,C,C,L,50.847,67.008
+Kingman Farm,36,C,D,L,83.427,91.399
+Kingman Farm,36,C,M,L,79.400,77.574
+Woodman Farm,1,C,C,E,62.463,56.299
+Woodman Farm,1,C,D,E,56.685,66.853
+Woodman Farm,1,C,M,E,72.442,87.742
+Woodman Farm,2,C,C,L,43.492,39.418
+Woodman Farm,2,C,D,L,88.306,57.587
+Woodman Farm,2,C,M,L,85.098,86.114
+Woodman Farm,3,MJ,C,L,47.292,42.885
+Woodman Farm,3,MJ,D,L,58.806,82.276
+Woodman Farm,3,MJ,M,L,80.098,64.852
+Woodman Farm,4,MJ+BTH,C,E,42.437,37.530
+Woodman Farm,4,MJ+BTH,D,E,78.832,49.882
+Woodman Farm,4,MJ+BTH,M,E,145.815,44.077
+Woodman Farm,5,MJ,C,E,41.940,51.288
+Woodman Farm,5,MJ,D,E,85.198,60.913
+Woodman Farm,5,MJ,M,E,106.617,162.323
+Woodman Farm,6,MJ,C,E,44.568,49.409
+Woodman Farm,6,MJ,D,E,72.587,80.370
+Woodman Farm,6,MJ,M,E,70.146,143.042
+Woodman Farm,7,MJ+BTH,C,L,57.284,36.560
+Woodman Farm,7,MJ+BTH,D,L,89.636,57.395
+Woodman Farm,7,MJ+BTH,M,L,119.061,53.728
+Woodman Farm,8,BTH,C,L,49.446,77.715
+Woodman Farm,8,BTH,D,L,122.070,101.934
+Woodman Farm,8,BTH,M,L,120.101,104.407
+Woodman Farm,9,MJ,C,E,42.701,46.445
+Woodman Farm,9,MJ,D,E,64.564,68.859
+Woodman Farm,9,MJ,M,E,53.878,69.483
+Woodman Farm,10,MJ,C,E,48.775,42.382
+Woodman Farm,10,MJ,D,E,53.024,66.762
+Woodman Farm,10,MJ,M,E,108.329,63.806
+Woodman Farm,11,BTH,C,L,50.978,52.865
+Woodman Farm,11,BTH,D,L,75.847,99.230
+Woodman Farm,11,BTH,M,L,96.807,73.131
+Woodman Farm,12,MJ+BTH,C,E,50.426,42.799
+Woodman Farm,12,MJ+BTH,D,E,94.359,60.043
+Woodman Farm,12,MJ+BTH,M,E,89.348,57.721
+Woodman Farm,13,MJ+BTH,C,E,38.929,42.799
+Woodman Farm,13,MJ+BTH,D,E,55.370,60.043
+Woodman Farm,13,MJ+BTH,M,E,73.991,57.721
+Woodman Farm,14,C,C,E,42.866,41.234
+Woodman Farm,14,C,D,E,56.574,58.151
+Woodman Farm,14,C,M,E,57.621,47.288
+Woodman Farm,15,MJ+BTH,C,E,48.457,44.306
+Woodman Farm,15,MJ+BTH,D,E,71.318,78.253
+Woodman Farm,15,MJ+BTH,M,E,74.853,81.464
+Woodman Farm,16,MJ+BTH,C,L,56.352,37.472
+Woodman Farm,16,MJ+BTH,D,L,83.666,54.112
+Woodman Farm,16,MJ+BTH,M,L,164.498,54.086
+Woodman Farm,17,BTH,C,L,48.135,39.809
+Woodman Farm,17,BTH,D,L,65.150,68.005
+Woodman Farm,17,BTH,M,L,106.023,54.220
+Woodman Farm,18,MJ+BTH,C,E,47.713,58.108
+Woodman Farm,18,MJ+BTH,D,E,70.528,58.403
+Woodman Farm,18,MJ+BTH,M,E,71.521,51.465
+Woodman Farm,19,C,C,L,49.883,45.798
+Woodman Farm,19,C,D,L,64.818,62.777
+Woodman Farm,19,C,M,L,71.765,58.503
+Woodman Farm,20,C,C,E,43.448,38.713
+Woodman Farm,20,C,D,E,70.677,45.292
+Woodman Farm,20,C,M,E,101.640,46.859
+Woodman Farm,21,C,C,E,47.842,42.175
+Woodman Farm,21,C,D,E,89.285,56.628
+Woodman Farm,21,C,M,E,54.159,55.277
+Woodman Farm,22,MJ+BTH,C,L,40.587,39.199
+Woodman Farm,22,MJ+BTH,D,L,70.690,48.083
+Woodman Farm,22,MJ+BTH,M,L,88.316,44.716
+Woodman Farm,23,MJ,C,E,63.852,38.469
+Woodman Farm,23,MJ,D,E,48.358,65.934
+Woodman Farm,23,MJ,M,E,82.195,60.875
+Woodman Farm,24,MJ+BTH,C,E,44.381,40.269
+Woodman Farm,24,MJ+BTH,D,E,59.543,57.022
+Woodman Farm,24,MJ+BTH,M,E,62.265,92.249
+Woodman Farm,25,MJ,C,L,48.945,43.738
+Woodman Farm,25,MJ,D,L,74.676,69.690
+Woodman Farm,25,MJ,M,L,72.501,92.773
+Woodman Farm,26,MJ,C,E,39.103,45.295
+Woodman Farm,26,MJ,D,E,58.608,96.490
+Woodman Farm,26,MJ,M,E,97.033,62.044
+Woodman Farm,27,C,C,L,55.528,45.295
+Woodman Farm,27,C,D,L,78.694,96.490
+Woodman Farm,27,C,M,L,82.486,62.044
+Woodman Farm,28,C,C,E,53.919,40.820
+Woodman Farm,28,C,D,E,92.775,75.757
+Woodman Farm,28,C,M,E,56.175,48.290
+Woodman Farm,29,C,C,E,47.098,39.703
+Woodman Farm,29,C,D,E,70.499,82.737
+Woodman Farm,29,C,M,E,69.806,51.459
+Woodman Farm,30,BTH,C,L,49.975,66.798
+Woodman Farm,30,BTH,D,L,72.292,44.172
+Woodman Farm,30,BTH,M,L,70.952,43.134
+Woodman Farm,31,MJ,C,L,43.893,42.463
+Woodman Farm,31,MJ,D,L,84.372,62.937
+Woodman Farm,31,MJ,M,L,85.121,52.648
+Woodman Farm,32,BTH,C,L,47.573,37.508
+Woodman Farm,32,BTH,D,L,70.910,55.549
+Woodman Farm,32,BTH,M,L,63.474,88.885
+Woodman Farm,33,BTH,C,L,49.833,34.306
+Woodman Farm,33,BTH,D,L,366.181,45.911
+Woodman Farm,33,BTH,M,L,70.910,48.903
+Woodman Farm,34,BTH,C,L,42.858,38.203
+Woodman Farm,34,BTH,D,L,60.507,77.460
+Woodman Farm,34,BTH,M,L,103.147,75.946
+Woodman Farm,35,BTH,C,L,43.465,38.114
+Woodman Farm,35,BTH,D,L,58.178,53.378
+Woodman Farm,35,BTH,M,L,106.704,50.911
+Woodman Farm,36,BTH,C,L,57.062,42.378
+Woodman Farm,36,BTH,D,L,83.763,56.389
+Woodman Farm,36,BTH,M,L,89.737,55.311
