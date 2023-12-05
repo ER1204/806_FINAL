@@ -5,92 +5,272 @@ library(tidyverse)
 library(dplyr)
 library(readr)
 library(gapminder)
-clean806b<-read.csv("HW/clean806b.CSV")
-view(clean806b)
-
-#Clean data
-trimdat <- rawdata %>% 
-  select(-one_of('EI_ID', 'Li_ID'))
-head(trimdat)
-
-avedat<- trimdat %>%
-  group_by(Site, TreeNo, Treatment, Innoculation, Harvest.Time) %>%
-  summarize(meanEi = mean(Ei_Lesion.Area..mm.), meanLi = mean(Li_Lesion.Area..mm.))
-head(avedat)
-
-#New .csv
-write_csv(avedat, "C:/Users/ereil/OneDrive/Desktop/806/clean806b.CSV")
-
-
-
-
-
-
-FourSites <- clean806b %>% group_by(Site, Treatment, Harvest.Time, Innoculation) %>% summarize(TotalEi = mean(meanEi), TotalLi = mean(meanLi)) %>% drop_na()
-view(FourSites)
-
-
-
-#plotting treatment, Innoculation, and Harvest.time agaisnt TotalEi and TotalLi
 library(ggplot2)
+clean806b<-read.csv("HW/clean806b.CSV")
+
+
+### ALL SITES
+FourSites <- clean806b %>% 
+  group_by(Site, Treatment, Harvest.Time, Innoculation) %>% 
+  summarize(TotalEi = mean(meanEi), TotalLi = mean(meanLi))
+str(FourSites)
+FourSites$Site<-as.factor(FourSites$Site)
+FourSites$Treatment<-as.factor(FourSites$Treatment)
+FourSites$Innoculation<-as.factor(FourSites$Innoculation)
+FourSites$Harvest.Time<-as.factor(FourSites$Harvest.Time)
+str(FourSites)
+
+# plotting treatment, Innoculation, and Harvest.time agaisnt TotalEi and TotalLi
 
 #TotalEi, site, treatment
-ggplot(data = FourSites, aes(x= Treatment, y = TotalEi, fill = Site)) + geom_bar(stat = 'identity', position = 'dodge')
+ggplot(data = FourSites, aes(x= Treatment, y = TotalEi, fill = Site)) + 
+  geom_boxplot()+
+  labs(y = "Average Early Inoculation Lesion Area (mm)")
 
 #TotalLi, site, treatment
-ggplot(data = FourSites, aes(x= Treatment, y = TotalLi, fill = Site)) + geom_bar(stat = 'identity', position = 'dodge')
+ggplot(data = FourSites, aes(x= Treatment, y = TotalLi, fill = Site)) +
+  geom_boxplot()+
+  labs(y = "Average Late Inoculation Lesion Area (mm)")
 
 #totalEi, treatment, innoculaiton
-ggplot(data = FourSites, aes(x= Treatment, y = TotalEi, fill = Innoculation)) + geom_bar(stat = 'identity', position = 'dodge')
+ggplot(data = FourSites, aes(x= Treatment, y = TotalEi, fill = Innoculation)) +
+  geom_boxplot()+
+  labs(y = "Average Early Inoculation Lesion Area (mm)")
 
 #TotalLi, Treatment, Innoculaiton
-ggplot(data = FourSites, aes(x= Treatment, y = TotalLi, fill = Innoculation)) + geom_bar(stat = 'identity', position = 'dodge')
+ggplot(data = FourSites, aes(x= Treatment, y = TotalLi, fill = Innoculation)) +
+  geom_boxplot()+
+  labs(y = "Average Late Inoculation Lesion Area (mm)")
 
 #TotalEi, treatment, harvest.time
-ggplot(data = FourSites, aes(x= Treatment, y = TotalEi, fill = Harvest.Time)) + geom_bar(stat = 'identity', position = 'dodge')
+ggplot(data = FourSites, aes(x= Treatment, y = TotalEi, fill = Harvest.Time)) + 
+  geom_boxplot()+
+  labs(y = "Average Early Inoculation Lesion Area (mm)")
 
 #TotalLi, treatment, harvest.time
-ggplot(data = FourSites, aes(x= Treatment, y = TotalLi, fill = Harvest.Time)) + geom_bar(stat = 'identity', position = 'dodge')
+ggplot(data = FourSites, aes(x= Treatment, y = TotalLi, fill = Harvest.Time)) + 
+  geom_boxplot()+
+  labs(y = "Average Late Inoculation Lesion Area (mm)")
+  
+###Anova
 
+anov_fs<- FourSites %>%
+ drop_na()
+str(anov_fs)
 
-#Anova
-
-#Treatment
-Ei_Tr <- aov(TotalEi~Treatment + Site, data = FourSites)
+# Ei Treatment
+Ei_Tr <- aov(TotalEi~Treatment + Site, data = anov_fs)
 summary(Ei_Tr)
     #Site is significant with a P-value of 0.00344**
-Li_Tr <- aov(TotalLi~Treatment + Site, data = FourSites)
+
+#TESTING ASSUMPTIONS
+
+#Generate residual and predicted values
+anov_fs$resids <- residuals(Ei_Tr)
+anov_fs$preds <- predict(Ei_Tr)
+anov_fs$sq_preds <- anov_fs$preds^2
+head(anov_fs)
+
+### Plot
+plot(resids ~ preds, data = anov_fs,
+     xlab = "Predicted Values",
+     ylab = "Residuals")
+#vase shape -> sqrt trans can improve test results but all tests nonsig
+
+### Perform a Shapiro-Wilk test for normality of residuals
+shapiro.test(anov_fs$resids)
+
+#p-value nonsig - good
+
+### Perform Levene's Test for homogenity of variances
+#install.packages("car")
+library(car)
+leveneTest(TotalEi ~ Treatment, data = anov_fs) #nonsig - good
+leveneTest(TotalEi ~ Site, data = anov_fs) #Unnecessary, because not comparing Blocks
+
+### Perform a Tukey 1-df Test for Non-additivity
+avemod_1df<-lm(TotalEi ~ Treatment + Site + sq_preds, anov_fs)
+anova(avemod_1df) #look at sq_preds p-value - nonsig - good
+
+# Li Treatment
+
+Li_Tr <- aov(TotalLi~Treatment + Site, data = anov_fs)
 summary(Li_Tr)
     #Site is significant with a P-value of 0.032*
 
-#Innoculation
-Ei_In <- aov(TotalEi~Site + Innoculation, data = FourSites)
+#TESTING ASSUMPTIONS
+
+#Generate residual and predicted values
+anov_fs$resids <- residuals(Li_Tr)
+anov_fs$preds <- predict(Li_Tr)
+anov_fs$sq_preds <- anov_fs$preds^2
+head(anov_fs)
+
+### Plot
+plot(resids ~ preds, data = anov_fs,
+     xlab = "Predicted Values",
+     ylab = "Residuals")
+#vaguely u shape -> log trans can improve test results but all tests nonsig
+
+### Perform a Shapiro-Wilk test for normality of residuals
+shapiro.test(anov_fs$resids) 
+
+#p-value MARGINALLY nonsig - good
+
+### Perform Levene's Test for homogenity of variances
+#install.packages("car")
+library(car)
+leveneTest(TotalLi ~ Treatment, data = anov_fs) #nonsig - good
+leveneTest(TotalLi ~ Site, data = anov_fs) #Unnecessary, because not comparing Blocks
+
+### Perform a Tukey 1-df Test for Non-additivity
+avemod_1df2<-lm(TotalLi ~ Treatment + Site + sq_preds, anov_fs)
+anova(avemod_1df2) #look at sq_preds p-value - nonsig - good
+
+# Ei Inoc
+
+Ei_In <- aov(TotalEi~Site + Innoculation, data = anov_fs)
 summary(Ei_In)
     #Site is significant with a p-value of 2.85e-05***
     #Inn is significant with a p-value of 1.37e-09***
-Li_In <- aov(TotalLi~ Site + Innoculation, data = FourSites)
+
+#TESTING ASSUMPTIONS
+
+#Generate residual and predicted values
+anov_fs$resids <- residuals(Ei_In)
+anov_fs$preds <- predict(Ei_In)
+anov_fs$sq_preds <- anov_fs$preds^2
+head(anov_fs)
+
+### Plot
+plot(resids ~ preds, data = anov_fs,
+     xlab = "Predicted Values",
+     ylab = "Residuals")
+#vaguely u shape -> log trans can improve test results
+
+### Perform a Shapiro-Wilk test for normality of residuals
+shapiro.test(anov_fs$resids) 
+
+#p-value SIG - BAD!
+
+### Perform Levene's Test for homogenity of variances
+#install.packages("car")
+library(car)
+leveneTest(TotalEi ~ Innoculation, data = anov_fs) #sig - BAD!
+leveneTest(TotalEi ~ Site, data = anov_fs) #Unnecessary, because not comparing Blocks
+
+### Perform a Tukey 1-df Test for Non-additivity
+avemod_1df4<-lm(TotalEi ~ Innoculation + Site + sq_preds, anov_fs)
+anova(avemod_1df4) #look at sq_preds p-value - sig - BAD!
+
+# Li Inoc
+
+Li_In <- aov(TotalLi~ Site + Innoculation, data = anov_fs)
 summary(Li_In)
     #Site is significant with a p-vlaue of 0.000793***
     #Inn is significant with a p-value of 8.44e-10***
 
+#TESTING ASSUMPTIONS
+
+#Generate residual and predicted values
+anov_fs$resids <- residuals(Li_In)
+anov_fs$preds <- predict(Li_In)
+anov_fs$sq_preds <- anov_fs$preds^2
+head(anov_fs)
+
+### Plot
+plot(resids ~ preds, data = anov_fs,
+     xlab = "Predicted Values",
+     ylab = "Residuals")
+#vaguely vase shape -> sqrt trans can improve test results
+
+### Perform a Shapiro-Wilk test for normality of residuals
+shapiro.test(anov_fs$resids) 
+
+#p-value SIG - BAD!
+
+### Perform Levene's Test for homogenity of variances
+#install.packages("car")
+library(car)
+leveneTest(TotalLi ~ Innoculation, data = anov_fs) #marignally sig - BAD!
+leveneTest(TotalLi ~ Site, data = anov_fs) #Unnecessary, because not comparing Blocks
+
+### Perform a Tukey 1-df Test for Non-additivity
+avemod_1df5<-lm(TotalLi ~ Innoculation + Site + sq_preds, anov_fs)
+anova(avemod_1df5) #look at sq_preds p-value - nonsig - good
+
+# HT Ei
+
 #Harvest.Time
-Ei_HT <- aov(TotalEi~Site + Harvest.Time, data = FourSites) 
+Ei_HT <- aov(TotalEi~Site + Harvest.Time, data = anov_fs) 
 summary(Ei_HT)
     #Site is significant with a p-value of 0.00455**
 
-Li_HT <- aov(TotalLi~Site + Harvest.Time, data = FourSites)
+#TESTING ASSUMPTIONS
+
+#Generate residual and predicted values
+anov_fs$resids <- residuals(Ei_HT)
+anov_fs$preds <- predict(Ei_HT)
+anov_fs$sq_preds <- anov_fs$preds^2
+head(anov_fs)
+
+### Plot
+plot(resids ~ preds, data = anov_fs,
+     xlab = "Predicted Values",
+     ylab = "Residuals")
+#vaguely vase shape -> sqrt trans can improve test results
+
+### Perform a Shapiro-Wilk test for normality of residuals
+shapiro.test(anov_fs$resids) 
+
+#p-value marginally nonsig - good
+
+### Perform Levene's Test for homogenity of variances
+#install.packages("car")
+library(car)
+leveneTest(TotalEi ~ Harvest.Time, data = anov_fs) #marginally sig - BAD!
+leveneTest(TotalEi ~ Site, data = anov_fs) #Unnecessary, because not comparing Blocks
+
+### Perform a Tukey 1-df Test for Non-additivity
+avemod_1df6<-lm(TotalEi ~ Harvest.Time + Site + sq_preds, anov_fs)
+anova(avemod_1df6) #look at sq_preds p-value - nonsig - good
+
+# HT Li
+
+Li_HT <- aov(TotalLi~Site + Harvest.Time, data = anov_fs)
 summary(Li_HT)
     #Site is significant with a P-value of 0.0322*
 
+#TESTING ASSUMPTIONS
 
+#Generate residual and predicted values
+anov_fs$resids <- residuals(Li_HT)
+anov_fs$preds <- predict(Li_HT)
+anov_fs$sq_preds <- anov_fs$preds^2
+head(anov_fs)
 
+### Plot
+plot(resids ~ preds, data = anov_fs,
+     xlab = "Predicted Values",
+     ylab = "Residuals")
+#vaguely vase shape -> sqrt trans can improve test results
 
+### Perform a Shapiro-Wilk test for normality of residuals
+shapiro.test(anov_fs$resids) 
 
+#p-value marginally sig - BAD!
 
+### Perform Levene's Test for homogenity of variances
+#install.packages("car")
+library(car)
+leveneTest(TotalLi ~ Harvest.Time, data = anov_fs) #nonsig - good
+leveneTest(TotalLi ~ Site, data = anov_fs) #Unnecessary, because not comparing Blocks
 
+### Perform a Tukey 1-df Test for Non-additivity
+avemod_1df7<-lm(TotalLi ~ Harvest.Time + Site + sq_preds, anov_fs)
+anova(avemod_1df7) #look at sq_preds p-value - nonsig - good
 
-
-
+### TRANSFORMATIONS!
 
 
 
