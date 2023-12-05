@@ -6,6 +6,7 @@ library(dplyr)
 library(readr)
 library(gapminder)
 library(ggplot2)
+library(car)
 clean806b<-read.csv("HW/clean806b.CSV")
 
 
@@ -58,6 +59,8 @@ anov_fs<- FourSites %>%
  drop_na()
 str(anov_fs)
 
+##TRT+SITE
+
 # Ei Treatment
 Ei_Tr <- aov(TotalEi~Treatment + Site, data = anov_fs)
 summary(Ei_Tr)
@@ -83,8 +86,6 @@ shapiro.test(anov_fs$resids)
 #p-value nonsig - good
 
 ### Perform Levene's Test for homogenity of variances
-#install.packages("car")
-library(car)
 leveneTest(TotalEi ~ Treatment, data = anov_fs) #nonsig - good
 leveneTest(TotalEi ~ Site, data = anov_fs) #Unnecessary, because not comparing Blocks
 
@@ -118,14 +119,14 @@ shapiro.test(anov_fs$resids)
 #p-value MARGINALLY nonsig - good
 
 ### Perform Levene's Test for homogenity of variances
-#install.packages("car")
-library(car)
 leveneTest(TotalLi ~ Treatment, data = anov_fs) #nonsig - good
 leveneTest(TotalLi ~ Site, data = anov_fs) #Unnecessary, because not comparing Blocks
 
 ### Perform a Tukey 1-df Test for Non-additivity
 avemod_1df2<-lm(TotalLi ~ Treatment + Site + sq_preds, anov_fs)
 anova(avemod_1df2) #look at sq_preds p-value - nonsig - good
+
+##INOCULATIONS+SITE
 
 # Ei Inoc
 
@@ -154,8 +155,6 @@ shapiro.test(anov_fs$resids)
 #p-value SIG - BAD!
 
 ### Perform Levene's Test for homogenity of variances
-#install.packages("car")
-library(car)
 leveneTest(TotalEi ~ Innoculation, data = anov_fs) #sig - BAD!
 leveneTest(TotalEi ~ Site, data = anov_fs) #Unnecessary, because not comparing Blocks
 
@@ -190,8 +189,6 @@ shapiro.test(anov_fs$resids)
 #p-value SIG - BAD!
 
 ### Perform Levene's Test for homogenity of variances
-#install.packages("car")
-library(car)
 leveneTest(TotalLi ~ Innoculation, data = anov_fs) #marignally sig - BAD!
 leveneTest(TotalLi ~ Site, data = anov_fs) #Unnecessary, because not comparing Blocks
 
@@ -199,12 +196,14 @@ leveneTest(TotalLi ~ Site, data = anov_fs) #Unnecessary, because not comparing B
 avemod_1df5<-lm(TotalLi ~ Innoculation + Site + sq_preds, anov_fs)
 anova(avemod_1df5) #look at sq_preds p-value - nonsig - good
 
+#HARVEST+TRT
+
 # HT Ei
 
 #Harvest.Time
-Ei_HT <- aov(TotalEi~Site + Harvest.Time, data = anov_fs) 
+Ei_HT <- aov(TotalEi~Treatment + Harvest.Time, data = anov_fs) 
 summary(Ei_HT)
-    #Site is significant with a p-value of 0.00455**
+    #HT is significant with a p-value of 0.0093**
 
 #TESTING ASSUMPTIONS
 
@@ -226,20 +225,18 @@ shapiro.test(anov_fs$resids)
 #p-value marginally nonsig - good
 
 ### Perform Levene's Test for homogenity of variances
-#install.packages("car")
-library(car)
-leveneTest(TotalEi ~ Harvest.Time, data = anov_fs) #marginally sig - BAD!
+leveneTest(TotalEi ~ Harvest.Time, data = anov_fs) #very marginally sig - bad
 leveneTest(TotalEi ~ Site, data = anov_fs) #Unnecessary, because not comparing Blocks
 
 ### Perform a Tukey 1-df Test for Non-additivity
 avemod_1df6<-lm(TotalEi ~ Harvest.Time + Site + sq_preds, anov_fs)
-anova(avemod_1df6) #look at sq_preds p-value - nonsig - good
+anova(avemod_1df6) #look at sq_preds p-value - very marginally sig - bad
 
 # HT Li
 
-Li_HT <- aov(TotalLi~Site + Harvest.Time, data = anov_fs)
+Li_HT <- aov(TotalLi~Treatment + Harvest.Time, data = anov_fs)
 summary(Li_HT)
-    #Site is significant with a P-value of 0.0322*
+    #NEITHER Treatment nor HT are significant
 
 #TESTING ASSUMPTIONS
 
@@ -261,8 +258,6 @@ shapiro.test(anov_fs$resids)
 #p-value marginally sig - BAD!
 
 ### Perform Levene's Test for homogenity of variances
-#install.packages("car")
-library(car)
 leveneTest(TotalLi ~ Harvest.Time, data = anov_fs) #nonsig - good
 leveneTest(TotalLi ~ Site, data = anov_fs) #Unnecessary, because not comparing Blocks
 
