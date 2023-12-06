@@ -130,7 +130,7 @@ anova(avemod_1df2) #look at sq_preds p-value - nonsig - good
 
 # Ei Inoc
 
-Ei_In <- aov(TotalEi~Site + Innoculation, data = anov_fs)
+Ei_In <- aov(TotalEi~Treatment + Innoculation, data = anov_fs)
 summary(Ei_In)
     #Site is significant with a p-value of 2.85e-05***
     #Inn is significant with a p-value of 1.37e-09***
@@ -147,12 +147,11 @@ head(anov_fs)
 plot(resids ~ preds, data = anov_fs,
      xlab = "Predicted Values",
      ylab = "Residuals")
-#vaguely u shape -> log trans can improve test results
+#vaguely vase shape -> sqrt trans can improve test results
 
 ### Perform a Shapiro-Wilk test for normality of residuals
-shapiro.test(anov_fs$resids) 
+shapiro.test(anov_fs$resids) #marginally sig - BAD!
 
-#p-value SIG - BAD!
 
 ### Perform Levene's Test for homogenity of variances
 leveneTest(TotalEi ~ Innoculation, data = anov_fs) #sig - BAD!
@@ -164,7 +163,7 @@ anova(avemod_1df4) #look at sq_preds p-value - sig - BAD!
 
 # Li Inoc
 
-Li_In <- aov(TotalLi~ Site + Innoculation, data = anov_fs)
+Li_In <- aov(TotalLi~ Treatment + Innoculation, data = anov_fs)
 summary(Li_In)
     #Site is significant with a p-vlaue of 0.000793***
     #Inn is significant with a p-value of 8.44e-10***
@@ -181,7 +180,7 @@ head(anov_fs)
 plot(resids ~ preds, data = anov_fs,
      xlab = "Predicted Values",
      ylab = "Residuals")
-#vaguely vase shape -> sqrt trans can improve test results
+#vaguely ?? shape -> ?? trans can improve test results
 
 ### Perform a Shapiro-Wilk test for normality of residuals
 shapiro.test(anov_fs$resids) 
@@ -194,7 +193,7 @@ leveneTest(TotalLi ~ Site, data = anov_fs) #Unnecessary, because not comparing B
 
 ### Perform a Tukey 1-df Test for Non-additivity
 avemod_1df5<-lm(TotalLi ~ Innoculation + Site + sq_preds, anov_fs)
-anova(avemod_1df5) #look at sq_preds p-value - nonsig - good
+anova(avemod_1df5) #look at sq_preds p-value - sig - BAD!
 
 #HARVEST+TRT
 
@@ -266,6 +265,5 @@ avemod_1df7<-lm(TotalLi ~ Harvest.Time + Site + sq_preds, anov_fs)
 anova(avemod_1df7) #look at sq_preds p-value - nonsig - good
 
 ### TRANSFORMATIONS!
-
 
 

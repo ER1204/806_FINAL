@@ -1,5 +1,5 @@
 ---
-title: "806_Final"
+title: Phytohormone treatment of American beech across 3 sites in relation to *Neonectria* growth over dormant and growing season
 author: "Erin Reilly, Patrick Lemis"
 date: "2023-11-09"
 output: pdf_document
@@ -14,19 +14,23 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Introduction
-Understanding the interactions of insects, pathogens, and their host species is a central goal of forest pathology. The coevolution of trees and their pathogens has led to a variety of tree defenses and pathogen innovations to overcome these defenses, generally without driving one or the other to extinction (Burdon & Thrall, 2009).
+|     Understanding the interactions of insects, pathogens, and their host species is a central goal of forest pathology. The coevolution of trees and their pathogens has led to a variety of tree defenses and pathogen innovations to overcome these defenses, generally without driving one or the other to extinction (Burdon & Thrall, 2009). However, even native species can pose a threat to their host community when population dynamics or range changes. Recent developments such as climate change and introduced species are driving changes in many species’ behavior, range, and host specificity (Mainka & Howard, 2010; Poland et al., 2021). This makes understanding how disease is controlled (or not controlled) by the host response (bottom-up) and external factors such as predation (top-down) a priority of forest pathology.
 
-Herbivorous feeding triggers plant response through the methyl jasmonate pathway – producing defensive chemicals that reduce the digestibility and palatability of plant material (Leitner et al., 2005). Infection from fungi in the phloem of the tree ultimately results in the necrosis of plant tissue, a symptom managed by the salicylic acid pathway, which produces defensive compounds that impede the spread of fungal mycelium and necrotic lesions (Yamamoto et al., 2020). These responses were previously thought to be mutually exclusive, with activation of the methyl jasmonate response pathway interfering or completely blocking the plant’s ability to activate the salicylic acid pathway response (Glazebrook, 2005).  However, recent research in a variety of plant species has shown that this pattern is difficult to replicate in a variety of plants under different herbivores and fungal pathogens (Ma et al., 2020). Furthermore , the introduction of a novel agent of disease can disrupt these typical patterns of response and may become a sever detriment to the health of trees it affects.
+|     Herbivorous feeding triggers plant response through the methyl jasmonate pathway – producing defensive chemicals that reduce the digestibility and palatability of plant material (Leitner et al., 2005). Infection from fungi in the phloem of the tree ultimately results in the necrosis of plant tissue, a symptom managed by the salicylic acid pathway, which produces defensive compounds that impede the spread of fungal mycelium and necrotic lesions (Yamamoto et al., 2020). These responses were previously thought to be mutually antagonistic, with activation of the methyl jasmonate response pathway interfering or completely blocking the plant’s ability to activate the salicylic acid pathway response (Glazebrook, 2005).
 
-Beech bark disease (BBD) is a complex of the scale insect Cryptococcus fagisuga and two species of Neonectria fungi (N. faginata, N. ditissima). The insect which precipitated this disease complex was introduced to North America around 1890, impacting the health and vigor of American beech (Fagus grandifolia) more severely than its native host trees in Europe (Ehrlich, 1934). 
+|     However, recent research in different plant species has shown that this crosstalk or suppression of the defensive cascade is difficult to replicate in a variety of plants under different herbivores and fungal pathogens (Ma et al., 2020). Furthermore, the introduction of a novel agent of disease can disrupt these typical patterns of response and may become a sever detriment to the health of trees it affects.
 
-The methyl jasmonate and salicylic acid pathway response in F. grandifolia is understudied, even regarding BBD, but literature suggests that the trees are naïve to the scale insect and therefore unable to produce a chemical defense against infestations (Wainhouse et al., 1988).
+|     Beech bark disease (BBD) is a disease complex comprising of the scale insect Cryptococcus fagisuga and two species of Neonectria fungi (N. faginata, N. ditissima). The insect which precipitated this disease complex was introduced to North America around 1890, impacting the health and vigor of American beech (Fagus grandifolia) more severely than its host trees in Europe (Ehrlich, 1934). However, in Europe the expansion of the range of C. fagisugia has led to its semi-invasive status as it continues to suppress the health of European beech (Gwiazdowski et al., 2006). 
 
-Assuming American beech are naïve to beech scale, as a novel insect pest with no coevolved history with the tree, Neonectria fungi are the major elicitors of tree response in the BBD complex, triggering the accumulation of suberin in the surrounding phloem to prevent the spread of canker lesions (Torelli et al., 1994). Tree dormancy, which prevents the production and movement of these defense compounds within the tree, may play an important role in the success of Neonectria despite the possibly unimpeded salicylic acid pathway response. Neonectria sporulation is anecdotally observed to peak in the autumn (Ehrlich, 1934) which may reflect the advantage of inoculation during the dormant period rather than during the growing season when the tree and its defense chemicals are active. 
+|     The methyl jasmonate and salicylic acid pathway response in F. grandifolia is understudied, even regarding BBD, but literature suggests that the trees are naïve to the scale insect and therefore unable to produce a chemical defense against infestations (Wainhouse et al., 1988). 
 
-## Methods
-We used 108 trees divided among three sites in New Hampshire in this study. The Kingman Farm and Horticulture Farm sites host two distinct populations of American beech in Strafford County, NH. These sites have natural populations of beech scale and Neonectria fungi, remnants of the initial wave of colonization in the early 1900s (Ehrlich, 1934). A site in Alton, NH on the Evelyn H. & Albert D. Morse, Sr. Preserve was also selected, as this population’s northern location is correlated with greater resistance to scale (Miller-Weeks, 1982). Trees between the sizes of 10 and 20 cm DBH were selected, as these trees have greater variability in scale response than larger trees (Houston, 1994). Trees with ‘smooth’ bark were selected under similar reasoning, as trees with prominent cankers and fissuring are a) proven to be genetically susceptible to scale and Neonectria colonization and b) bark structure such as this is associated with greater scale colonization success (Houston et al., 1979).  
-```{r, echo=FALSE}
+|     Assuming American beech are naïve   to beech scale, as a novel insect pest with no coevolved history with the tree, Neonectria fungi are the major elicitors of tree response in the BBD complex, triggering the accumulation of suberin in the surrounding phloem to prevent the spread of canker lesions (Torelli et al., 1994). Tree dormancy, which prevents the production and movement of these defense compounds within the tree, may play an important role in the success of Neonectria. This would be especially advantageous given that the salicylic acid pathway response may be unimpeded by methyl jasmonate response pathway antagonism, assuming the tree is not responding to C. fagisuga feeding. Neonectria sporulation is anecdotally observed to peak in the autumn (Ehrlich, 1934) which may reflect the advantage of inoculation during the dormant period rather than during the growing season when the tree and its defense chemicals are active.
+
+## Research Approach
+
+# Study Site
+|     We used 108 trees divided among three sites in New Hampshire in this study. The Kingman Farm and Horticulture Farm sites host two distinct populations of American beech in Strafford County, NH. These sites have natural populations of beech scale and Neonectria fungi, remnants of the initial wave of colonization in the early 1900s (Ehrlich, 1934). A site in Alton, NH on the Evelyn H. & Albert D. Morse, Sr. Preserve was also selected, as this population’s northern location is correlated with greater resistance to scale (Miller-Weeks, 1982). Trees between the sizes of 10 and 20 cm DBH were selected, as these trees have greater variability in scale response than larger trees (Houston, 1994). Trees with ‘smooth’ bark were selected under similar reasoning, as trees with prominent cankers and fissuring are a) proven to be genetically susceptible to scale and Neonectria colonization and b) bark structure such as this is associated with greater scale colonization success (Houston et al., 1979).  
+```{r, echo=FALSE, message=FALSE, warning=FALSE,  figures-side, out.width="60%"}
 #Load libraries and data
 library(tidyverse)
 library(maps)
@@ -40,6 +44,8 @@ nh<-map_data("county", region = "new hampshire")
 siteloc<-read.csv("C:/Users/ereil/OneDrive/Documents/806_1/siteloc.CSV")
 
 #Mapping site locations
+
+# All
 ggplot(nh, aes(long, lat))+
   geom_polygon(aes(group = group))+
   geom_path(color="gray", aes(group=group))+
@@ -48,82 +54,155 @@ ggplot(nh, aes(long, lat))+
     coord_quickmap()+
  labs(title = "Study Site Locations")+xlab("Longitude")+ylab("Latitude")
 
+# Strafford County
+stcount<- nh %>%
+  filter(subregion=="strafford")
+
+stsiteloc<- siteloc[-c(2),]
+
+ggplot(stcount, aes(long, lat))+
+  geom_polygon(aes(group = group))+
+  geom_path(color="gray", aes(group=group))+
+  geom_point(data = stsiteloc, aes(x = long, y = lat, color = Site))+
+  scale_color_manual("Site", values = c("red", "blue"))+
+  theme(legend.position = 'right')+
+  coord_quickmap()+
+  labs(title = "Study Site Locations: Strafford County")+xlab("Longitude")+ylab("Latitude")
+
 ```
+Figure 1. Study sites [more clarity]
 
-Treatment application occurred in mid to late August 2022. I assigned each tree one of four treatment types – control, DI water; one to induce the methyl jasmonate response pathway, via a methyl jasmonate solution; one to induce the salicylic acid pathway response via benzothiadiazole (BTH), a downstream promoter of the salicylic acid pathway; and a treatment combining the methyl jasmonate and BTH treatments. The control solution contained a small amount of the surfactant Tween20 which was present in all treatment solutions.
-[table?]
+# Methods
+|     Treatment application occurred in mid to late August 2022. I assigned each tree one of four treatment types – control, DI water; one to induce the methyl jasmonate response pathway, via a methyl jasmonate solution; one to induce the salicylic acid pathway response via benzothiadiazole (BTH), a downstream promoter of the salicylic acid pathway; and a treatment combining the methyl jasmonate and BTH treatments. The control solution contained a small amount of the surfactant Tween20 which was present in all treatment solutions.
 
-I applied all treatments exogenously to the bark of the tree as the perimeter of three approximately 500 cm² circles around 1.4m from the ground.  In the case of the combined treatment, I applied alternating rings of the BTH and MJ solutions as in [figure?] below. I applied the solution via cotton swab until runoff occurred. Each tree received 4 total applications, applied every other day over the course of a week.
+```{r, echo=FALSE, table-print, message=FALSE, warning=FALSE}
+#Load libraries and data
+library(knitr)
+#install.packages("kableExtra")
+library(kableExtra)
+Table1<-read.csv("C:/Users/ereil/OneDrive/Documents/806_1/806_Final/solutiontable.csv")
 
-In mid-February 2023, the dormant season fungal inoculation took place. Three weeks prior  to inoculation, I plated MESI 18.1.1 (Nf) and DUR1 1.1.1 (Nd) from back-up filter paper. I labeled five small plates of standard MEA media with the sample name, my initials, and the date. I sterilized tweezers in 70% ethanol and flamed, then allowed them to cool. I opened the envelope containing the back-up sample filter paper, carefully placing a small piece from the corner (if possible) of the paper in the center of the media plate. I closed the envelope and wrapped the media plate in parafilm. I repeated this, sterilizing the tweezer between plates, until each sample had five plates prepared, 10 in total. I incubated these at 25 C for one week. From the plates that showed mycelial growth, I took an additional 5-10 plugs and plated on small media plates, labeled as described above. The DUR sample had only one successful back-up sample plating, and I made an additional 10 plates using plugs from successful platings from the following week to ensure enough inoculum for application. I stored these at 25 C until application. 
+kable(Table1, digits = 5, row.names = TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"),
+                full_width = F,
+                font_size = 12,
+                position = "center",
+                latex_options = "HOLD_position")
+```
+Table 1. Solutions [more clarity]
 
-Inoculum packing took place the night prior to or morning of application. I autoclaved (30/10 grav cycle) microcentrifuge tube racks (5 in total) and allowed them to dry in the flowhood. I inserted a sterilized disposable pipette into the back on the [brand/size/specifics] biopsy punch and sealed the connection with parafilm. I used the punch to remove plugs from the mycelial edge of the colony plates, using the pipette to dispel the plug upright into the microcentrifuge tube rack wells. When filled, I covered a microcentrifuge tube rack in sterilized aluminum foil with the wells numbered (each tree had 3 plugs of each inoculum). Inoculum did not share microcentrifuge tube racks, even if there were open wells available. I made and used a separate punch for each Neonectria species as well as for the sterile media plugs used as controls. I re-parafilmed the colonies and returned to 25 C incubator for future packing until I had fully punched them, in which case I disposed of them. 
+|     I applied all treatments exogenously to the bark of the tree as the perimeter of three approximately 150 cm² circles around 1.4m from the ground.  In the case of the combined treatment, I applied alternating rings of the BTH and MJ solutions. I applied the solution via cotton swab until runoff occurred. Each tree received 4 total applications, applied every other day over the course of a week. 
 
-Field inoculation occurred in two phases: dormant season (DS) inoculation [in mid-February 2023] and growing season (GS) inoculation [in mid to late May 2023]. To see if DS inoculation impacted tree response to GS inoculation, the intention was to only inoculate 2/3 of site trees during the dormant season, with the remaining 1/3 only receiving GS inoculation. I allowed the DS inoculations to grow for approximately 3 months, and then I harvested half of the DS inoculated trees at each site. All trees would receive GS inoculation, which I also allowed to grow for about 3 months before harvest. This would result in three categories of harvest: DS-3 months, DS-6 months, and GS-3 months and three categories of tree treatment: DS and GS inoculations harvested 3 months after GS inoculation, DS inoculation harvested 3 months after DS inoculation with GS inoculation harvested 3 months after GS inoculation, and GS inoculation harvested 3 months after GS inoculation. 
+|     In mid-February 2023, the dormant season fungal inoculation took place. Three weeks prior  to inoculation, I plated MESI 18.1.1 (Nf) and DUR1 1.1.1 (Nd) from back-up filter paper. I labeled five small plates of standard MEA media with the sample name, my initials, and the date. I sterilized tweezers in 70% ethanol and flamed, then allowed them to cool. I opened the envelope containing the back-up sample filter paper, carefully placing a small piece from the corner (if possible) of the paper in the center of the media plate. I closed the envelope and wrapped the media plate in parafilm. I repeated this, sterilizing the tweezer between plates, until each sample had five plates prepared, 10 in total. I incubated these at 25 C for one week. From the plates that showed mycelial growth, I took an additional 5-10 plugs and plated on small media plates, labeled as described above. The DUR sample had only one successful back-up sample plating, and I made an additional 10 plates using plugs from successful platings from the following week to ensure enough inoculum for application. I stored these at 25 C until application. 
 
-However, field application error resulted in only Alton receiving the above inoculation regime. On the Kingman Farm and Horticulture Farm sites, I inoculated all trees during the dormant season, resulting in there being no GS inoculation only trees. I harvested half of the trees at these sites 3 months after DS inoculation, and all received GS inoculation as planned. 
+|     Inoculum packing took place the night prior to or morning of application. I autoclaved (30/10 grav cycle) microcentrifuge tube racks (5 in total) and allowed them to dry in a laminar flowhood. I inserted a sterilized disposable pipette into the back of a 6 mm disposable biopsy punch and sealed the connection with parafilm. I used the punch to remove plugs from the mycelial edge of the colony plates, using the pipette to dispel the plug upright into the microcentrifuge tube rack wells. When filled, I covered a microcentrifuge tube rack in sterilized aluminum foil with the wells numbered (each tree had 3 plugs of each inoculum). Inoculum did not share microcentrifuge tube racks, even if there were open wells available. I made and used a separate punch for each Neonectria species as well as for the sterile media plugs used as controls. I re-parafilmed the colonies and returned to 25 C incubator for future packing until I had fully punched them, in which case I disposed of them. 
 
-The inoculation procedure required Tyvek tape, three separate forceps, and three separate 10 mL vials of sterilizing solution (70% ethanol), as well as the pre-packed microcentrifuge tube racks and biopsy punches. I secured flagging around the top of the cages to provide a dry anchor point for the tape, as tree bark was often damp. Using the biopsy punch, I removed bark to the periderm in three locations around each cage: the top left, top right, and bottom center [see figure x]. I made punches on smooth bark, with care to avoid punching old lesions or damaged tissue (which would appear brown instead of green when properly punched). I placed small squares of Tyvek tape [around 4cmx4cm] below the punch site, so that the punch location would be roughly centered when fully pressed against the tree. I firmly secured the base of each piece of tape to the tree, but I left the top open for inoculation. I sterilized forceps for each an inoculum sample in the paired vial and used the forceps to punch through the foil on the appropriate microcentrifuge tube rack, gently removing the plug. I positioned the plug mycelium face down into the punch wound, with the small piece of tape used to hold it in place. I repeated this process for each inoculum, sterilizing forceps in the paired vials between trees and using a new biopsy punch as needed (roughly every 2-5 trees).
+|     Field inoculation occurred in two phases: dormant season (DS) inoculation in mid-February 2023 and growing season (GS) inoculation in mid May 2023. To see if DS inoculation impacted tree response to GS inoculation, the intention was to only inoculate 2/3 of site trees during the dormant season, with the remaining 1/3 only receiving GS inoculation. I allowed the DS inoculations to grow for approximately 3 months, and then I harvested half of the DS inoculated trees at each site. All trees would receive GS inoculation, which I also allowed to grow for about 3 months before harvest. This would result in three categories of harvest: DS-3 months, DS-6 months, and GS-3 months and three categories of tree treatment: DS and GS inoculations harvested 3 months after GS inoculation, DS inoculation harvested 3 months after DS inoculation with GS inoculation harvested 3 months after GS inoculation, and GS inoculation harvested 3 months after GS inoculation. 
 
-Upon harvest, 3-6 months after inoculation depending on category, I photographed these wound sites for analysis in ImageJ. I removed tape remaining from the initial inoculation, and I used a Personna “Lab Blue” double edged bade to carefully scrape away bark to the phloem layer without going into the phelloderm. I discarded and replaced these blades as necessary, usually every 3-5 trees. Consistency in this depth was important to maintain for analysis. I placed a brass tack near the lesion site for scaling during analysis. Using the camera rig [figure x] and a phone, I photographed each lesion trio in the order: control, DUR, and MES (eg. bottom center, top left, top right). I labeled the photographs from each tree in the field to avoid confusion in later analysis, with ‘blanks’ taken between trees to separate out each batch of 9 total photographs for each tree. 
+|     However, field application error resulted in only Alton receiving the above inoculation regime. On the Kingman Farm and Horticulture Farm sites, I inoculated all trees during the dormant season, resulting in there being no GS inoculation only trees. I harvested half of the trees at these sites 3 months after DS inoculation, and all received GS inoculation as planned. 
 
-I conducted analysis of lesions in ImageJ [how cite?]. I measured the scaling tack in each photograph (generally with a scale of 18 pixels/mm) using the [line tool]. Then, I traced the lesion using the [freehand tool] and measured its area to the nearest 0.000. 
-## Results 
+|     The inoculation procedure required Tyvek tape, three separate forceps, and three separate 10 mL vials of sterilizing solution (70% ethanol), as well as the pre-packed microcentrifuge tube racks and biopsy punches. I secured flagging around the top of the cages to provide a dry anchor point for the tape, as tree bark was often damp. Using the biopsy punch, I removed bark to the periderm in three locations around the roughly 150 cm² application circle: the top left, top right, and bottom center. I made punches on smooth bark, with care to avoid punching old lesions or damaged tissue (which would appear brown instead of green when properly punched). I placed small squares of Tyvek tape below the punch site, so that the punch location would be roughly centered when fully pressed against the tree. I firmly secured the base of each piece of tape to the tree, but I left the top open for inoculation. I sterilized forceps for each an inoculum sample in the paired vial and used the forceps to punch through the foil on the appropriate microcentrifuge tube rack, gently removing the plug. I positioned the plug mycelium face down into the punch wound, with the small piece of tape used to hold it in place. I repeated this process for each inoculum, sterilizing forceps in the paired vials between trees and using a new biopsy punch as needed (roughly every 2-5 trees).
 
-```{r, echo = FALSE}
+|     Upon harvest, 3-6 months after inoculation depending on category, I photographed these wound sites for analysis in ImageJ. I removed tape remaining from the initial inoculation, and I used a Personna “Lab Blue” double edged bade to carefully scrape away bark to the phloem layer without going into the phelloderm. I discarded and replaced these blades as necessary, usually every 3-5 trees. Consistency in this depth was important to maintain for analysis. I placed a brass tack near the lesion site for scaling during analysis. Using the camera rig and a phone, I photographed each lesion trio in the order: control, DUR, and MES (eg. bottom center, top left, top right). I labeled the photographs from each tree in the field to avoid confusion in later analysis, with ‘blanks’ taken between trees to separate out each batch of 9 total photographs for each tree. 
+
+|     I conducted analysis of lesions in ImageJ (Schneider et al., 2012). I measured the scaling tack in each photograph (generally with a scale of 18 pixels/mm) using the line tool. Then, I traced the lesion using the freehand tool and measured its area to the nearest 0.000. 
+
+# Results 
+
+[data compiled as means of each inoc/season/tree -> averaging 3 subsamples per study unit for analysis]
+
+[notes for me: 
+#Dunnetts - comparing to "control"
+#install.packages("DescTools")
+#library(DescTools)
+DunnettTest(x = data$Meas, g = data$Trt)
+
+#HSD Test
+HSD.test(model, "Trt", console = T)
+HSD.test(model, "Site", console = T)
+HSD.test(model, "Inoc", console = T)
+HSD.test(model, "HT", console = T)
+
+example lsd ranking:
+seednotmod<-lm(Meas ~ Till + Block + Till:Block 
+               + Seed + Seed:Block + Till:Seed, seedat)
+anova(seednotmod)
+#Till:Block MS = 62.9, DF = 9
+#Seed:Block MS = 63.7, DF = 9
+library(agricolae)
+#install.packages("agricolae")
+till_comp<-LSD.test(seedat$Meas, seedat$Till, DFerror = 9,
+                    MSerror = 62.9)
+till_comp ->gives ranked (eg. separated results)
+seed_comp<-LSD.test(seedat$Meas, seedat$Seed, DFerror = 9,
+                    MSerror = 63.7)
+seed_comp]
+
+
+```{r,  echo=FALSE, message=FALSE, warning=FALSE}
 #Load libraries and clean data
 library(tidyverse)
 library(ggplot2)
 library(car)
-rawdata<-read.csv("C:/Users/ereil/OneDrive/Desktop/806/806.CSV")
+clean806b<-read.csv("C:/Users/ereil/OneDrive/Desktop/806/clean806b.csv")
 
-trimdat <- rawdata %>% 
-  select(-one_of('EI_ID', 'Li_ID'))
-head(trimdat)
+FourSites <- clean806b %>% 
+  group_by(Site, Treatment, Harvest.Time, Innoculation) %>% 
+  summarize(TotalEi = mean(meanEi), TotalLi = mean(meanLi))
+str(FourSites)
+FourSites$Site<-as.factor(FourSites$Site)
+FourSites$Treatment<-as.factor(FourSites$Treatment)
+FourSites$Innoculation<-as.factor(FourSites$Innoculation)
+FourSites$Harvest.Time<-as.factor(FourSites$Harvest.Time)
+str(FourSites)
 
-avedat<- trimdat %>%
-  group_by(Site, TreeNo, Treatment, Innoculation, Harvest.Time) %>%
-  summarize(meanEi = mean(Ei_Lesion.Area..mm.), meanLi = mean(Li_Lesion.Area..mm.))
-head(avedat)
+anov_fs<- FourSites %>%
+ drop_na()
+str(anov_fs)
 
-#Drop NAs for analysis
-avedat_lesions<-avedat %>%
-  drop_na()
-avedat_lesions$Site<-as.factor(avedat_lesions$Site)
-avedat_lesions$Treatment<-as.factor(avedat_lesions$Treatment)
-avedat_lesions$Harvest.Time<-as.factor(avedat_lesions$Harvest.Time)
-
-#Exploratory plotting - all sites, inoculation (CDM) v meanLi area (mm)
-ggplot(avedat_lesions,
-       aes(x = Innoculation, y = meanLi))+
-  geom_boxplot()+
-  labs(x = "Innoculation", y = "Mean Late Innoculation Lesion Area (mm)")
-
-#ANOVA
-modave<-lm(meanLi ~ Innoculation + Site, avedat_lesions)
-anova(modave)
-
-#TESTING ASSUMPTIONS
-#Generate residual and predicted values
-avedat_lesions$resids <- residuals(modave)
-avedat_lesions$preds <- predict(modave)
-avedat_lesions$sq_preds <- avedat_lesions$preds^2
-
-#Look at a plot of residual vs. predicted values
-plot(resids ~ preds, data = avedat_lesions,
-     xlab = "Predicted Values",
-     ylab = "Residuals") #check shape rules
-
-#Perform a Shapiro-Wilk test for normality of residuals
-shapiro.test(avedat_lesions$resids)
-
-#Perform Levene's Test for homogenity of variances
-#install.packages("car")
-leveneTest(meanLi ~ Innoculation, data = avedat_lesions)
 ```
 
 
-```{r}
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+### Ei ~ Site + Trt
+
+# Plot
+ggplot(data = FourSites, aes(x= Treatment, y = TotalEi, fill = Site)) + 
+  geom_boxplot()+
+  labs(y = "Average Early Inoculation Lesion Area (mm)")
+
+# Model
+Ei_Tr <- aov(TotalEi~Treatment + Site, data = anov_fs)
+summary(Ei_Tr)
+
+# TESTING ASSUMMPTIONS - none of this needs to show in the final document
+#Generate residual and predicted values
+anov_fs$resids <- residuals(Ei_Tr)
+anov_fs$preds <- predict(Ei_Tr)
+anov_fs$sq_preds <- anov_fs$preds^2
+head(anov_fs)
+
+### Plot
+plot(resids ~ preds, data = anov_fs,
+     xlab = "Predicted Values",
+     ylab = "Residuals")
+#vase shape -> sqrt trans can improve test results but all tests nonsig
+
+### Perform a Shapiro-Wilk test for normality of residuals
+shapiro.test(anov_fs$resids)
+
+#p-value nonsig - good
+
+### Perform Levene's Test for homogenity of variances
+leveneTest(TotalEi ~ Treatment, data = anov_fs) #nonsig - good
+#leveneTest(TotalEi ~ Site, data = anov_fs) #Unnecessary, because not comparing Blocks
+
+### Perform a Tukey 1-df Test for Non-additivity
+avemod_1df<-lm(TotalEi ~ Treatment + Site + sq_preds, anov_fs)
+anova(avemod_1df) #look at sq_preds p-value - nonsig - good
+
+
 ```
 
 
@@ -144,4 +223,4 @@ leveneTest(meanLi ~ Innoculation, data = avedat_lesions)
 
 ## Discussion
 
-##Bibliography
+## Bibliography
