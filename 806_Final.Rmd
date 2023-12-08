@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Introduction
 |     Understanding the interactions of insects, pathogens, and their host species is a central goal of forest pathology. The coevolution of trees and their pathogens has led to a variety of tree defenses and pathogen innovations to overcome these defenses, generally without driving one or the other to extinction (Burdon & Thrall, 2009). However, even native species can pose a threat to their host community when population dynamics or range changes. Recent developments such as climate change and introduced species are driving changes in many species’ behavior, range, and host specificity (Mainka & Howard, 2010; Poland et al., 2021). This makes understanding how disease is controlled (or not controlled) by the host response (bottom-up) and external factors such as predation (top-down) a priority of forest pathology.
 
-|     Herbivorous feeding triggers plant response through the methyl jasmonate pathway – producing defensive chemicals that reduce the digestibility and palatability of plant material (Leitner et al., 2005). Infection from fungi in the phloem of the tree ultimately results in the necrosis of plant tissue, a symptom managed by the salicylic acid pathway, which produces defensive compounds that impede the spread of fungal mycelium and necrotic lesions (Yamamoto et al., 2020). These responses were previously thought to be mutually antagonistic, with activation of the methyl jasmonate response pathway interfering or completely blocking the plant’s ability to activate the salicylic acid pathway response (Glazebrook, 2005).
+|     Herbivorous feeding triggers plant response through the methyl jasmonate pathway – producing defensive chemicals that reduce the digestibility and palatability of plant material (Leitner et al., 2005). Infection from fungi in the phloem of the tree ultimately results in the necrosis of plant tissue, a symptom managed by the salicylic acid pathway, which produces defensive compounds that impede the spread of fungal mycelium and necrotic lesions (Yamamoto et al., 2020). These responses were previously thought to be mutually antagonistic, with activation of the methyl jasmonate response pathway interfering or completely Siteing the plant’s ability to activate the salicylic acid pathway response (Glazebrook, 2005).
 
 |     However, recent research in different plant species has shown that this crosstalk or suppression of the defensive cascade is difficult to replicate in a variety of plants under different herbivores and fungal pathogens (Ma et al., 2020). Furthermore, the introduction of a novel agent of disease can disrupt these typical patterns of response and may become a sever detriment to the health of trees it affects.
 
@@ -105,41 +105,15 @@ Table 1. Solutions [more clarity]
 
 |     Upon harvest, 3-6 months after inoculation depending on category, I photographed these wound sites for analysis in ImageJ. I removed tape remaining from the initial inoculation, and I used a Personna “Lab Blue” double edged bade to carefully scrape away bark to the phloem layer without going into the phelloderm. I discarded and replaced these blades as necessary, usually every 3-5 trees. Consistency in this depth was important to maintain for analysis. I placed a brass tack near the lesion site for scaling during analysis. Using the camera rig and a phone, I photographed each lesion trio in the order: control, DUR, and MES (eg. bottom center, top left, top right). I labeled the photographs from each tree in the field to avoid confusion in later analysis, with ‘blanks’ taken between trees to separate out each batch of 9 total photographs for each tree. 
 
-|     I conducted analysis of lesions in ImageJ (Schneider et al., 2012). I measured the scaling tack in each photograph (generally with a scale of 18 pixels/mm) using the line tool. Then, I traced the lesion using the freehand tool and measured its area to the nearest 0.000. 
+|     I conducted analysis of lesions in ImageJ (Schneider et al., 2012). I TotalLiured the scaling tack in each photograph (generally with a scale of 18 pixels/mm) using the line tool. Then, I traced the lesion using the freehand tool and TotalLiured its area to the nearest 0.000. 
 
 # Results 
 
-[data compiled as means of each inoc/season/tree -> averaging 3 subsamples per study unit for analysis]
-
-[notes for me: 
-#Dunnetts - comparing to "control"
-#install.packages("DescTools")
-#library(DescTools)
-DunnettTest(x = data$Meas, g = data$Trt)
-
-#HSD Test
-HSD.test(model, "Trt", console = T)
-HSD.test(model, "Site", console = T)
-HSD.test(model, "Inoc", console = T)
-HSD.test(model, "HT", console = T)
-
-example lsd ranking:
-seednotmod<-lm(Meas ~ Till + Block + Till:Block 
-               + Seed + Seed:Block + Till:Seed, seedat)
-anova(seednotmod)
-#Till:Block MS = 62.9, DF = 9
-#Seed:Block MS = 63.7, DF = 9
-library(agricolae)
-#install.packages("agricolae")
-till_comp<-LSD.test(seedat$Meas, seedat$Till, DFerror = 9,
-                    MSerror = 62.9)
-till_comp ->gives ranked (eg. separated results)
-seed_comp<-LSD.test(seedat$Meas, seedat$Seed, DFerror = 9,
-                    MSerror = 63.7)
-seed_comp]
-
+[how was the raw data processed -> data compiled as means of each inoc/season/tree -> averaging 3 subsamples per study unit for analysis]
 
 ```{r,  echo=FALSE, message=FALSE, warning=FALSE}
+### Data and set up
+
 #Load libraries and clean data
 library(tidyverse)
 library(ggplot2)
@@ -162,19 +136,26 @@ str(anov_fs)
 
 ```
 
-
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
-### Ei ~ Site + Trt
+### Ei ~ Site + Treatment
 
 # Plot
 ggplot(data = FourSites, aes(x= Treatment, y = TotalEi, fill = Site)) + 
   geom_boxplot()+
   labs(y = "Average Early Inoculation Lesion Area (mm)")
 
+```
+Figure 2. Ei ~ Site + Treatment
+```{r, include=FALSE}
+
+### Ei ~ Site + Treatment
+
 # Model
 Ei_Tr <- aov(TotalEi~Treatment + Site, data = anov_fs)
 summary(Ei_Tr)
+
+# site has a significant effect [0.00344 **] on the differences between treatments across sites
 
 # TESTING ASSUMMPTIONS - none of this needs to show in the final document
 #Generate residual and predicted values
@@ -196,31 +177,235 @@ shapiro.test(anov_fs$resids)
 
 ### Perform Levene's Test for homogenity of variances
 leveneTest(TotalEi ~ Treatment, data = anov_fs) #nonsig - good
-#leveneTest(TotalEi ~ Site, data = anov_fs) #Unnecessary, because not comparing Blocks
+#leveneTest(TotalEi ~ Site, data = anov_fs) #Unnecessary, because not comparing Sites
 
 ### Perform a Tukey 1-df Test for Non-additivity
 avemod_1df<-lm(TotalEi ~ Treatment + Site + sq_preds, anov_fs)
 anova(avemod_1df) #look at sq_preds p-value - nonsig - good
 
 
+### HSD Ranking
+library(agricolae)
+HSD.test(Ei_Tr, "Treatment", console = T) # No sigdiff between treatments across all sites
+HSD.test(Ei_Tr, "Site", console = T) # Sigdiff between Strafford County sites [woodman+kingman] and Alton site [Evelyn]
+```
+[Talk abt non/sig with p-vals]
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+### Li ~ Site + Treatment
+
+ggplot(data = FourSites, aes(x= Treatment, y = TotalLi, fill = Site)) +
+  geom_boxplot()+
+  labs(y = "Average Late Inoculation Lesion Area (mm)")
+
+```
+Figure 3. Li ~ Site + Treatment
+```{r, include=FALSE}
+
+### Li ~ Site + Treatment
+
+Li_Tr <- aov(TotalLi~Treatment + Site, data = anov_fs)
+summary(Li_Tr)
+
+#TESTING ASSUMPTIONS
+
+#Generate residual and predicted values
+anov_fs$resids <- residuals(Li_Tr)
+anov_fs$preds <- predict(Li_Tr)
+anov_fs$sq_preds <- anov_fs$preds^2
+head(anov_fs)
+
+### Plot
+plot(resids ~ preds, data = anov_fs,
+     xlab = "Predicted Values",
+     ylab = "Residuals")
+#vaguely u shape -> 
+
+### Perform a Shapiro-Wilk test for normality of residuals
+shapiro.test(anov_fs$resids) 
+
+#p-value MARGINALLY sig - bad
+
+### Perform Levene's Test for homogenity of variances
+leveneTest(TotalLi ~ Treatment, data = anov_fs) #nonsig - good
+leveneTest(TotalLi ~ Site, data = anov_fs) #Unnecessary, because not comparing Sites
+
+### Perform a Tukey 1-df Test for Non-additivity
+avemod_1df2<-lm(TotalLi ~ Treatment + Site + sq_preds, anov_fs)
+anova(avemod_1df2) #look at sq_preds p-value - marginally nonsig - good
+
+```
+[Talk abt non/sig with p-vals]
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+### Ei ~ Treatment + Inoc
+ggplot(data = FourSites, aes(x= Treatment, y = TotalEi, fill = Innoculation)) +
+  geom_boxplot()+
+  labs(y = "Average Early Inoculation Lesion Area (mm)")
+
+```
+Figure 4. Ei ~ Treatment + Inoc
+```{r,include=FALSE}
+
+Ei_In <- aov(TotalEi~Treatment + Innoculation, data = anov_fs)
+summary(Ei_In)
+    #Inoc is significant
+
+#TESTING ASSUMPTIONS
+
+#Generate residual and predicted values
+anov_fs$resids <- residuals(Ei_In)
+anov_fs$preds <- predict(Ei_In)
+anov_fs$sq_preds <- anov_fs$preds^2
+head(anov_fs)
+
+### Plot
+plot(resids ~ preds, data = anov_fs,
+     xlab = "Predicted Values",
+     ylab = "Residuals")
+#vase shape -> sqrt trans can improve test results
+
+### Perform a Shapiro-Wilk test for normality of residuals
+shapiro.test(anov_fs$resids) #marginally sig - BAD!
+
+
+### Perform Levene's Test for homogenity of variances
+leveneTest(TotalEi ~ Innoculation, data = anov_fs) #sig - BAD!
+leveneTest(TotalEi ~ Site, data = anov_fs) #Unnecessary, because not comparing Blocks
+
+### Perform a Tukey 1-df Test for Non-additivity
+avemod_1df4<-lm(TotalEi ~ Innoculation + Site + sq_preds, anov_fs)
+anova(avemod_1df4) #look at sq_preds p-value - sig - BAD!
+
+#Dunnetts - comparing to "control"
+#install.packages("DescTools")
+library(agricolae)
+library(DescTools)
+DunnettTest(anov_fs$TotalEi, anov_fs$Innoculation, data = anov_fs)
+
+#Both D and M are significantly different than C across treatments
+
+HSD.test(Ei_In, "Treatment", console = T) # No sigdiff between treatments across all inocs
+HSD.test(Ei_In, "Innoculation", console = T) # Sigdiff between control and D+M, D nonsig from M across treatments
+
+
 ```
 
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
-```{r}
+### Li ~ Treatment + Inoc
+ggplot(data = FourSites, aes(x= Treatment, y = TotalLi, fill = Innoculation)) +
+  geom_boxplot()+
+  labs(y = "Average Late Inoculation Lesion Area (mm)")
 ```
+Figure 4. Li ~ Treatment + Inoc
+```{r,include=FALSE}
 
+### Li ~ Treatment + Inoc
+Li_In <- aov(TotalLi~ Treatment + Innoculation, data = anov_fs)
+summary(Li_In)
+    #Inn is significant 
 
-```{r}
+#TESTING ASSUMPTIONS
+
+#Generate residual and predicted values
+anov_fs$resids <- residuals(Li_In)
+anov_fs$preds <- predict(Li_In)
+anov_fs$sq_preds <- anov_fs$preds^2
+head(anov_fs)
+
+### Plot
+plot(resids ~ preds, data = anov_fs,
+     xlab = "Predicted Values",
+     ylab = "Residuals")
+#vaguely ?? shape -> ?? trans can improve test results
+
+### Perform a Shapiro-Wilk test for normality of residuals
+shapiro.test(anov_fs$resids) 
+
+#p-value SIG - BAD!
+
+### Perform Levene's Test for homogenity of variances
+leveneTest(TotalLi ~ Innoculation, data = anov_fs) #marignally sig - BAD!
+leveneTest(TotalLi ~ Site, data = anov_fs) #Unnecessary, because not comparing Blocks
+
+### Perform a Tukey 1-df Test for Non-additivity
+avemod_1df5<-lm(TotalLi ~ Innoculation + Site + sq_preds, anov_fs)
+anova(avemod_1df5) #look at sq_preds p-value - sig - BAD!
+
+#Dunnetts - comparing to "control"
+#install.packages("DescTools")
+library(agricolae)
+library(DescTools)
+DunnettTest(anov_fs$TotalEi, anov_fs$Innoculation, data = anov_fs)
+
+#Both D and M are significantly different than C across treatments
+
+HSD.test(Ei_In, "Treatment", console = T) # No sigdiff between treatments across all inocs
+HSD.test(Ei_In, "Innoculation", console = T) # Sigdiff between control and D+M, D nonsig from M across treatments
 ```
+[Talk abt non/sig with p-vals]
 
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
-```{r}
+#TotalEi, treatment, harvest.time
+ggplot(data = FourSites, aes(x= Treatment, y = TotalEi, fill = Harvest.Time)) + 
+  geom_boxplot()+
+  labs(y = "Average Early Inoculation Lesion Area (mm)")
 ```
+Figure 5. Ei ~ Treatment + HT
+```{r,include=FALSE}
 
+#Harvest.Time
+Ei_HT <- aov(TotalEi~Treatment + Harvest.Time, data = anov_fs) 
+summary(Ei_HT)
+    #HT is significant with a p-value of 0.0093**
 
-```{r}
+#TESTING ASSUMPTIONS
+
+#Generate residual and predicted values
+anov_fs$resids <- residuals(Ei_HT)
+anov_fs$preds <- predict(Ei_HT)
+anov_fs$sq_preds <- anov_fs$preds^2
+head(anov_fs)
+
+### Plot
+plot(resids ~ preds, data = anov_fs,
+     xlab = "Predicted Values",
+     ylab = "Residuals")
+#vaguely vase shape -> sqrt trans can improve test results
+
+### Perform a Shapiro-Wilk test for normality of residuals
+shapiro.test(anov_fs$resids) 
+
+#p-value marginally nonsig - good
+
+### Perform Levene's Test for homogenity of variances
+leveneTest(TotalEi ~ Harvest.Time, data = anov_fs) #very marginally sig - bad but livable
+leveneTest(TotalEi ~ Site, data = anov_fs) #Unnecessary, because not comparing Blocks
+
+### Perform a Tukey 1-df Test for Non-additivity
+avemod_1df6<-lm(TotalEi ~ Harvest.Time + Site + sq_preds, anov_fs)
+anova(avemod_1df6) #look at sq_preds p-value - very marginally sig - bad but livable
+
+### HSD Ranking
+HSD.test(Ei_HT, "Treatment", console = T) # No sigdiff between treatments across all inocs
+HSD.test(Ei_HT, "Harvest.Time", console = T) # Sigdiff between E and L, L tend to be larger than E
+
 ```
+[Talk abt non/sig with p-vals]
 
 ## Discussion
 
+[connect non/sig to intro points -> fungi sporulation, phytohormone defense, etc.]
+[future directions -> additional information that could be gleaned from the data (eg. site by site analysis) and potential future experiments/improvements]
+
 ## Bibliography
+
+```{r}
+devtools::install_github("crsh/citr")
+library(citr)
+```
+
