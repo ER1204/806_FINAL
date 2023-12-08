@@ -20,11 +20,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 |     However, recent research in different plant species has shown that this crosstalk or suppression of the defensive cascade is difficult to replicate in a variety of plants under different herbivores and fungal pathogens (Ma et al., 2020). Furthermore, the introduction of a novel agent of disease can disrupt these typical patterns of response and may become a sever detriment to the health of trees it affects.
 
-|     Beech bark disease (BBD) is a disease complex comprising of the scale insect Cryptococcus fagisuga and two species of Neonectria fungi (N. faginata, N. ditissima). The insect which precipitated this disease complex was introduced to North America around 1890, impacting the health and vigor of American beech (Fagus grandifolia) more severely than its host trees in Europe (Ehrlich, 1934). However, in Europe the expansion of the range of C. fagisugia has led to its semi-invasive status as it continues to suppress the health of European beech (Gwiazdowski et al., 2006). 
+|     Beech bark disease (BBD) is a disease complex comprising of the scale insect *Cryptococcus fagisuga* and two species of Neonectria fungi (*N. faginata, N. ditissima*). The insect which precipitated this disease complex was introduced to North America around 1890, impacting the health and vigor of American beech (*Fagus grandifolia*) more severely than its host trees in Europe (Ehrlich, 1934). However, in Europe the expansion of the range of *C. fagisugia* has led to its semi-invasive status as it continues to suppress the health of European beech (Gwiazdowski et al., 2006). 
 
-|     The methyl jasmonate and salicylic acid pathway response in F. grandifolia is understudied, even regarding BBD, but literature suggests that the trees are naïve to the scale insect and therefore unable to produce a chemical defense against infestations (Wainhouse et al., 1988). 
+|     The methyl jasmonate and salicylic acid pathway response in *F. grandifolia* is understudied, even regarding BBD, but literature suggests that the trees are naïve to the scale insect and therefore unable to produce a chemical defense against infestations (Wainhouse et al., 1988). 
 
-|     Assuming American beech are naïve   to beech scale, as a novel insect pest with no coevolved history with the tree, Neonectria fungi are the major elicitors of tree response in the BBD complex, triggering the accumulation of suberin in the surrounding phloem to prevent the spread of canker lesions (Torelli et al., 1994). Tree dormancy, which prevents the production and movement of these defense compounds within the tree, may play an important role in the success of Neonectria. This would be especially advantageous given that the salicylic acid pathway response may be unimpeded by methyl jasmonate response pathway antagonism, assuming the tree is not responding to C. fagisuga feeding. Neonectria sporulation is anecdotally observed to peak in the autumn (Ehrlich, 1934) which may reflect the advantage of inoculation during the dormant period rather than during the growing season when the tree and its defense chemicals are active.
+|     Assuming American beech are naïve   to beech scale, as a novel insect pest with no coevolved history with the tree, Neonectria fungi are the major elicitors of tree response in the BBD complex, triggering the accumulation of suberin in the surrounding phloem to prevent the spread of canker lesions (Torelli et al., 1994). Tree dormancy, which prevents the production and movement of these defense compounds within the tree, may play an important role in the success of Neonectria. This would be especially advantageous given that the salicylic acid pathway response may be unimpeded by methyl jasmonate response pathway antagonism, assuming the tree is not responding to *C. fagisuga* feeding. Neonectria sporulation is anecdotally observed to peak in the autumn (Ehrlich, 1934) which may reflect the advantage of inoculation during the dormant period rather than during the growing season when the tree and its defense chemicals are active.
 
 ## Research Approach
 
@@ -136,6 +136,8 @@ str(anov_fs)
 
 ```
 
+
+Figure 2. Ei ~ Site + Treatment
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
 ### Ei ~ Site + Treatment
@@ -146,7 +148,7 @@ ggplot(data = FourSites, aes(x= Treatment, y = TotalEi, fill = Site)) +
   labs(y = "Average Early Inoculation Lesion Area (mm)")
 
 ```
-Figure 2. Ei ~ Site + Treatment
+
 ```{r, include=FALSE}
 
 ### Ei ~ Site + Treatment
@@ -191,9 +193,9 @@ HSD.test(Ei_Tr, "Site", console = T) # Sigdiff between Strafford County sites [w
 ```
 
 TotalEi ~ Site + Treatment:
- Each relationship we looked at followed the same statistical methodlogy, which starts with an anova. After being ran through an anova, it was found that site had a significant effect on the various treatments, with a p-value of 0.00344**. After the anova,the residuals and predicted values were found and plotted. This resulted in a vase shaped graph. A Shapiro-Wilk test was used to test for normaility among the residuals, this resulted with a p-value of 0.3441 which is not significant. THis was then ran thorugh a Levene's Test for the homogientiy of variances. Where it was found to be not significant with a p-value of 0.5239. A Tukey 1-df test was performed to test for non-additivity, this resulted in  one significant value in site with a p-value of  0.003725. However that test was done to check the significance of sq_preds which was not significant. Finally each treatment and site was run through a HSD ranking system. The first one that was done was for Total Ei and Treatments, which resulted in the ranking of: 1. BTH (70.68), 2. MF+BTH (68.19), 3. C (62.92), 4. MJ (62,15). HOwever this was found to be nonsignificant. The second one, done on Total Ei and Site, resulted in: 1. Woodman Farm (71.54), 2. Kingman Farm (68.01), 3. Evelyn (50.38). This was found to be a significant differnce.
+ Each relationship we looked at followed the same statistical methodlogy, which starts with an anova. After being ran through an anova, it was found that site had a significant effect on the various treatments, with a p-value of 0.0002004*** . After the anova,the residuals and predicted values were found and plotted. This resulted in a vase shaped graph. A Shapiro-Wilk test was used to test for normality among the residuals, this resulted with a p-value of 0.3441 which is not significant. T His was then ran through a Levene's Test for the homogeneity of variances. Where it was found to be not significant with a p-value of 0.5239. A Tukey 1-df test was performed to test for non-additivity, this resulted in site being significant with a p-value of  0.003725. Sq_preds was also found to be significant with a p-value of 1.646e-06*** . Finally each treatment and site was run through a HSD ranking system. The first one that was done was for Total Ei and Treatments, which resulted in the ranking of: 1. BTH (70.68), 2. MF+BTH (68.19), 3. C (62.92), 4. MJ (62,15). However this was found to be nonsignificant. The second one, done on Total Ei and Site, resulted in: 1. Woodman Farm (71.54), 2. Kingman Farm (68.01), 3. Evelyn (50.38). This was found to be a significant difference.
  
-  
+Figure 3. Li ~ Site + Treatment
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
 ### Li ~ Site + Treatment
@@ -203,7 +205,7 @@ ggplot(data = FourSites, aes(x= Treatment, y = TotalLi, fill = Site)) +
   labs(y = "Average Late Inoculation Lesion Area (mm)")
 
 ```
-Figure 3. Li ~ Site + Treatment
+
 ```{r, include=FALSE}
 
 ### Li ~ Site + Treatment
@@ -243,13 +245,11 @@ HSD.test(Li_Tr, "Treatment", console = T)
 HSD.test(Li_Tr, "Site", console = T)
 
 ```
-
-TotalLi ~ Site + Treatment:
   Following the same methods as the previous relationships. The anova resulted in one significant value for site, with a p-value of 0.032*. The residuals and predicted values were then found a graphed, which resulted in being vaguely U-shaped. These were then ran through the Shapiro-Wilks normality tests which resulted in a marginally significant value of 0.02844. The Levene's homogeneity of variances test (Li~Treatment) was found to be non significant. The Tukey 1-df test found that site was significant with a p-value of 0.03179 as well as finding the sq_preds not significant. Finally a HSD ranking was done on Li~Treatment and Li_Site. The treatment were ranked as follows: 1.MJ, 2. BTH, 3.C, 4.MJ+BTH, all of which were not significant to eachother. While the sites were ranked as: 1. Kingman Farm, 2. Woodman Farm, 3. Evelyn. Where Kingman and Evelyn are significantly different.
 
 
 
-
+Figure 4. Ei ~ Treatment + Inoc
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
 ### Ei ~ Treatment + Inoc
@@ -258,7 +258,7 @@ ggplot(data = FourSites, aes(x= Treatment, y = TotalEi, fill = Innoculation)) +
   labs(y = "Average Early Inoculation Lesion Area (mm)")
 
 ```
-Figure 4. Ei ~ Treatment + Inoc
+
 ```{r,include=FALSE}
 
 Ei_In <- aov(TotalEi~Treatment + Innoculation, data = anov_fs)
@@ -304,12 +304,11 @@ HSD.test(Ei_In, "Innoculation", console = T) # Sigdiff between control and D+M, 
 
 
 ```
-
 TotalEi ~ Treatment +Inoculation
-  Starting off with the anova, it was found that inoculation was the only significant value of 2.01e-07*** . Similarly the residuals and predicted values were found and plotted, resulting in a vase shaped graph. These were then put into the Shapiro-Wilks tests which found that they are marginally significant at a p-value of 0.02844. A Tukey 1-df test was then done, which showed that inoculation (p=1.839e-09*** ) and site (3.262e-05*** ) were both highly significant, however sq_preds was not with a value of 0.5085. The different inoculation types were then compared to the control by using a Dunnett's test. Where it was found that both D and M were significantly different compared to the control. Finally the HSD ranking was done for treatment, resulting in no significance between any treatment. While the HSD tanking done on inoculation found significance between control and D+M, however D was not significant with M across treatments.
+  Starting off with the anova, it was found that inoculation was the only significant value of 2.01e-07*** . Similarly the residuals and predicted values were found and plotted, resulting in a vase shaped graph. These were then put into the Shapiro-Wilks tests which found that they are marginally significant at a p-value of 0.02844. A Tukey 1-df test was then done, which showed that inoculation (p=1.287e-09*** ) and site (2.612e-05*** ) were both highly significant, however sq_preds was not with a value of 0.5085. The different inoculation types were then compared to the control by using a Dunnett's test. Where it was found that both D and M were significantly different compared to the control. Finally the HSD ranking was done for treatment, resulting in no significance between any treatment. While the HSD tanking done on inoculation found significance between control and D+M, however D was not significant with M across treatments.
 
 
-
+Figure 5. Li ~ Treatment + Inoc
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
 ### Li ~ Treatment + Inoc
@@ -317,7 +316,7 @@ ggplot(data = FourSites, aes(x= Treatment, y = TotalLi, fill = Innoculation)) +
   geom_boxplot()+
   labs(y = "Average Late Inoculation Lesion Area (mm)")
 ```
-Figure 4. Li ~ Treatment + Inoc
+
 ```{r,include=FALSE}
 
 ### Li ~ Treatment + Inoc
@@ -363,15 +362,13 @@ DunnettTest(anov_fs$TotalEi, anov_fs$Innoculation, data = anov_fs)
 HSD.test(Ei_In, "Treatment", console = T) # No sigdiff between treatments across all inocs
 HSD.test(Ei_In, "Innoculation", console = T) # Sigdiff between control and D+M, D nonsig from M across treatments
 ```
-[Talk abt non/sig with p-vals]
-
 TotalLi ~ Treatment + Inoculation:
   The initial anova test showed there to be a high significance between TotalLi and Inoculation, with a p-value of 2.47e-08*** . The residuals and predicted values were found and plotted, resulting in a graph the appears to be split down the middle. The residuals were found to be significant by using the Shapiro-Wilks test, with a p-value of 0.00162. The homogeneity of variance was tested using the Levene's test, which resulted in inoculation being marginally significant with a p-value of 0.05811. The Tukey 1-df test found sq_preds to be significant with a p-value of 0.0225841* . The Dunnetts test showed a high significance between the control and the other inoculation types, D and M. Finally, HSD ranking were done for both treatment and inoculation. W Here treatment was found to not significant across inoculation types. While inoculation types, D and M, were highly significant compared to the control, however D and M are not significant to each other.
 
 
 
 
-
+Figure 6. Ei ~ Treatment + HT
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
 #TotalEi, treatment, harvest.time
@@ -379,7 +376,7 @@ ggplot(data = FourSites, aes(x= Treatment, y = TotalEi, fill = Harvest.Time)) +
   geom_boxplot()+
   labs(y = "Average Early Inoculation Lesion Area (mm)")
 ```
-Figure 5. Ei ~ Treatment + HT
+
 ```{r,include=FALSE}
 
 #Harvest.Time
@@ -419,7 +416,6 @@ HSD.test(Ei_HT, "Treatment", console = T) # No sigdiff between treatments across
 HSD.test(Ei_HT, "Harvest.Time", console = T) # Sigdiff between E and L, L tend to be larger than E
 
 ```
-[Talk abt non/sig with p-vals]
 
 TotalEi ~ Treatment + Harvest.Time:
   The initial anova test found that harvest time was significant with TotalEi with a p-value of 0.0093. The residuals and predicted values were found and plotted, which resulted in a vase shape graph. A Shapiro-Wilks tests was done on the residuals, where they were found to be not significant. The Levene's test was then used to look at the homogeneity of variances, which was found to be marginally significant with a p-value of 0.7847. A Tukey 1-df tests was used to look at non-additivity, which resulted in a significant p-value of 1.465e-05 for sq_preds. Finally the HSD ranking found no significance between treatments across all inoculations. While the HSD found that harvest time was significant between early and late.
@@ -428,8 +424,9 @@ TotalEi ~ Treatment + Harvest.Time:
 
 ## Discussion
 
-[connect non/sig to intro points -> fungi sporulation, phytohormone defense, etc.]
-[future directions -> additional information that could be gleaned from the data (eg. site by site analysis) and potential future experiments/improvements]
+ The main question that we asked is; Does the inducement of A. beech chemical defenses impact BBD agents? Looking at figures 2-6, it was found that that none of the phytohormone treatments have a significant effect on fungal lesion. This includes across sites, inoculum, and harvest time. This means that the dormant season for A. beech is the most successful for Neonectria establishment and growth. This is likely caused by the reduced chemical defense pathway function during the dormant months. This was initially predicted to not be the case as there is evidence of chemical pathway induction within birch trees (Ma et al., 2020). However, this kind of study has yet to be done for A. beech as well as BBD. This means that there was no direct foundation knowledge available, due to this we instead referenced other studies using this method but for different species. As such, we were not entirely certain on the inoculum solution that would best suit A. beech/BBD inoculation due to the innate differences in species, which would potentially effect the results. 
+
+
 
 ## Bibliography
 
